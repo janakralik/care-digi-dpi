@@ -2,7 +2,7 @@
 
 <template>
   <header class="header">
-    <img src="@/assets/DIGIcare-4.png" />
+    <img src="@/assets/DIGIcare-4.png" class="logo" />
 
     <nav>
       <div class="nav-items">
@@ -45,12 +45,13 @@
   z-index: 0;
 }
 
+/* Korrekte Klassenzuweisung und kleinere Größe */
 .logo {
   position: absolute;
   top: 20px;
   left: 30px;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: auto;
 }
 
 nav {

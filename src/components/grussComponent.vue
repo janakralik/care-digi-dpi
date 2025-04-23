@@ -5,12 +5,11 @@
     <div class="greeting-box"></div>
     <div class="greeting-text">
       <span>Guten Morgen Hilde! Heute ist </span>
-      <span class="highlight">Montag, der 25. März</span>
-      <span>.</span>
+      <span class="highlight">Montag, der 25. März.</span>
     </div>
     <div class="temperature">14 °C</div>
     <div class="weather-icon">
-      <img src="@/assets/DIGIcare-4.png" alt="Logo" class="logo" />
+      <img src="@/assets/WetterIcon.png" alt="Logo" class="logo" />
     </div>
   </div>
 </template>

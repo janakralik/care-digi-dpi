@@ -19,12 +19,10 @@
 <style>
 .footer {
   width: 100%;
-  height: 459px;
   background-color: #efd1b0;
-  position: absolute;
-  bottom: 0;
   padding: 30px;
   box-sizing: border-box;
+  /* Keine absolute Positionierung mehr! */
 }
 
 .footer img {
