@@ -1,5 +1,3 @@
-/* eslint-disable vue/multi-word-component-names */
-
 <template>
   <div class="background-wrapper">
     <div class="links">
@@ -32,10 +30,11 @@ export default {
 
 <style scoped>
 .background-wrapper {
-  background-color: #fafafa;
+  background-color: white; /* Weißer Hintergrund */
   padding: 20px;
   border-radius: 20px;
   margin-bottom: 20px;
+  box-shadow: 0px 0px 10px #ccc; /* Leichter Schatten */
 }
 
 .section-title {
@@ -44,7 +43,8 @@ export default {
   padding: 10px;
   border-radius: 20px;
   font-size: 22px;
-  margin: 40px 0 20px 0;
+  margin: 0 0 20px 0; /* Abstand nach unten */
+  border-top: 5px solid #6d3a8c; /* Lila Rand oben */
 }
 
 .links-grid {
@@ -55,30 +55,30 @@ export default {
 }
 
 .link-card {
-  background: #efd1b0;
-  width: 250px; /* Breite auf 250px erhöht */
+  background: #fbe3ca;
+  width: 250px;
   text-align: center;
-  padding: 30px; /* Etwas mehr Polsterung hinzugefügt */
+  padding: 30px;
   border-radius: 20px;
-  box-shadow: 0px 0px 10px #ccc; /* Etwas stärkeren Schatten hinzugefügt */
+  box-shadow: 0px 0px 10px #ccc;
 }
 
 .link-icon {
-  width: 100px; /* Größeres Icon */
+  width: 100px;
   height: 100px;
-  margin-bottom: 20px; /* Mehr Abstand zum Text */
+  margin-bottom: 20px;
 }
 
 .link-name {
   font-weight: bold;
   margin-bottom: 15px;
-  font-size: 18px; /* Größere Schrift */
+  font-size: 18px;
 }
 
 .hilfe-button {
   background-color: #e1b47a;
   border: none;
-  padding: 10px 15px; /* Mehr Polsterung */
+  padding: 10px 15px;
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;

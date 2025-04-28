@@ -1,5 +1,3 @@
-/* eslint-disable vue/multi-word-component-names */
-
 <template>
   <div class="background-wrapper">
     <div class="kontakte">
@@ -37,10 +35,11 @@ export default {
 
 <style scoped>
 .background-wrapper {
-  background-color: #fafafa;
+  background-color: white;
   padding: 20px;
   border-radius: 20px;
   margin-bottom: 20px;
+  box-shadow: 0px 0px 10px #ccc;
 }
 
 .section-title {
@@ -49,7 +48,8 @@ export default {
   padding: 10px;
   border-radius: 20px;
   font-size: 22px;
-  margin: 40px 0 20px 0;
+  margin: 0 0 20px 0; /* Abstand nach unten */
+  border-top: 5px solid #6d3a8c; /* Lila Rand oben */
 }
 
 .kontakt-card {
@@ -60,6 +60,7 @@ export default {
   margin: 10px 0;
   border: 1px solid #efd1b0;
   border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
 }
 
 .kontakt-foto {

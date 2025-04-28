@@ -4,6 +4,7 @@ import ProfilView from "../views/ProfilView.vue";
 import AdministrationView from "../views/AdministrationView.vue";
 import ImpressumView from "../views/ImpressumView.vue";
 import DatenschutzView from "../views/DatenschutzView.vue";
+import StartView from "../views/StartView";
 
 const routes = [
   { path: "/", component: DashboardView },
@@ -11,6 +12,7 @@ const routes = [
   { path: "/profil", component: ProfilView },
   { path: "/impressum", component: ImpressumView },
   { path: "/datenschutz", component: DatenschutzView },
+  { path: "/startseite", component: StartView },
 ];
 
 const router = createRouter({

@@ -1,8 +1,9 @@
-/* eslint-disable vue/multi-word-component-names */
-
 <template>
   <header class="header">
-    <img src="@/assets/DIGIcare-4.png" class="logo" />
+    <!-- Logo, klickbar, navigiert zur Startseite -->
+    <router-link to="/startseite">
+      <img src="@/assets/DIGIcare-4.png" class="logo" />
+    </router-link>
 
     <nav>
       <div class="nav-items">
@@ -10,20 +11,23 @@
           to="/"
           class="nav-item"
           :class="{ active: $route.path === '/' }"
-          >CAREdigi Home</router-link
         >
+          Senioren Dashboard
+        </router-link>
         <router-link
           to="/administration"
           class="nav-item"
           :class="{ active: $route.path === '/administration' }"
-          >Administration</router-link
         >
+          Administration
+        </router-link>
         <router-link
           to="/profil"
           class="nav-item"
           :class="{ active: $route.path === '/profil' }"
-          >Profil</router-link
         >
+          Profil
+        </router-link>
       </div>
     </nav>
   </header>
@@ -40,7 +44,7 @@
 .header {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 150px;
   background-color: #eab377;
   z-index: 0;
 }
@@ -52,6 +56,7 @@
   left: 30px;
   width: 100px;
   height: auto;
+  cursor: pointer; /* Zeigt Hand-Cursor an, wenn man mit der Maus drüberfährt */
 }
 
 nav {

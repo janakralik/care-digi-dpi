@@ -1,5 +1,3 @@
-/* eslint-disable vue/multi-word-component-names */
-
 <template>
   <div class="background-wrapper">
     <div class="erinnerungen">
@@ -80,10 +78,11 @@ export default {
 
 <style scoped>
 .background-wrapper {
-  background-color: #fafafa;
+  background-color: white; /* Weißer Hintergrund */
   padding: 20px;
   border-radius: 20px;
   margin-bottom: 20px;
+  box-shadow: 0px 0px 10px #ccc; /* Leichter Schatten */
 }
 
 .section-title {
@@ -98,7 +97,7 @@ export default {
 .kalender {
   display: flex;
   justify-content: space-around;
-  background: #ffffff; /* Kalender bleibt weiß */
+  background: white; /* Weißer Hintergrund */
   border-radius: 15px;
   padding: 10px;
   margin-bottom: 20px;
@@ -116,13 +115,14 @@ export default {
 }
 
 .erinnerung {
-  background: #fff;
+  background: #fbe3ca;
   display: flex;
   align-items: center;
   margin: 10px 0;
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 0px 0px 5px #ccc;
+  border: 1px solid #efd1b0; /* Orange Rand */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
 }
 
 .icon {

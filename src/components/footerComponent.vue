@@ -20,31 +20,30 @@
 .footer {
   width: 100%;
   background-color: #efd1b0;
-  padding: 30px;
+  padding: 20px; /* Reduzierter Padding für weniger Höhe */
   box-sizing: border-box;
-  /* Keine absolute Positionierung mehr! */
+  text-align: center; /* Zentriert den Text */
 }
 
 .footer img {
-  width: 263px;
-  height: 263px;
-  position: absolute;
-  right: 40px;
-  top: 93px;
+  width: 150px; /* Kleinere Bildgröße */
+  height: 150px;
+  margin-bottom: 10px; /* Weniger Abstand zum Text */
 }
 
 .footer .contact-info {
-  font-size: 24px;
+  font-size: 16px; /* Kleinere Schriftgröße */
   color: black;
-  line-height: 1.6;
+  line-height: 1.4;
+  margin-bottom: 10px; /* Weniger Abstand zum unteren Text */
 }
 
 .footer .links a {
   color: black;
-  font-size: 28px;
+  font-size: 16px; /* Kleinere Schriftgröße */
   font-weight: 700;
   text-decoration: none;
-  display: block;
-  margin-top: 10px;
+  display: inline-block;
+  margin: 5px 15px; /* Weniger Abstand zwischen den Links */
 }
 </style>
