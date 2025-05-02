@@ -1,7 +1,31 @@
 <template>
   <div class="background-wrapper">
+    <h2 class="section-title">Neuen Ansprechpartner hinzufügen</h2>
+
+    <form @submit.prevent="addKontakt" class="kontakt-formular">
+      <input
+        v-model="newKontakt.name"
+        type="text"
+        placeholder="Name"
+        required
+      />
+      <input
+        v-model="newKontakt.telefon"
+        type="text"
+        placeholder="Telefonnummer"
+        required
+      />
+      <input
+        v-model="newKontakt.foto"
+        type="text"
+        placeholder="Foto-URL"
+        required
+      />
+      <button type="submit">Hinzufügen</button>
+    </form>
+
     <div class="kontakte">
-      <h2 class="section-title">Meine Ansprechpartner</h2>
+      <h3>Bereits hinzugefügt:</h3>
 
       <div
         v-for="(kontakt, index) in kontakte"
@@ -13,7 +37,6 @@
           <strong>{{ kontakt.name }}</strong>
           <p>{{ kontakt.telefon }}</p>
         </div>
-        <button class="anrufen-button">Anrufen</button>
       </div>
     </div>
   </div>
@@ -24,20 +47,29 @@ export default {
   data() {
     return {
       kontakte: [],
+      newKontakt: {
+        name: "",
+        telefon: "",
+        foto: "",
+      },
     };
   },
   mounted() {
     const gespeicherteKontakte = localStorage.getItem("kontakte");
     if (gespeicherteKontakte) {
       this.kontakte = JSON.parse(gespeicherteKontakte);
-    } else {
-      // Falls nichts gespeichert: Standardkontakte laden
-      this.kontakte = [
-        { name: "Marie", telefon: "0676 / 8142123", foto: "pfad/zu/marie.png" },
-        { name: "Lena", telefon: "0676 / 8142673", foto: "pfad/zu/lena.png" },
-        { name: "Klaus", telefon: "0667 / 8142123", foto: "pfad/zu/klaus.png" },
-      ];
     }
+  },
+  methods: {
+    addKontakt() {
+      this.kontakte.push({ ...this.newKontakt });
+      localStorage.setItem("kontakte", JSON.stringify(this.kontakte));
+
+      // Formular leeren
+      this.newKontakt.name = "";
+      this.newKontakt.telefon = "";
+      this.newKontakt.foto = "";
+    },
   },
 };
 </script>
@@ -61,6 +93,33 @@ export default {
   border-top: 5px solid #6d3a8c;
 }
 
+.kontakt-formular {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.kontakt-formular input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.kontakt-formular button {
+  padding: 10px;
+  background-color: #e1b47a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.kontakte h3 {
+  margin-top: 20px;
+}
+
 .kontakt-card {
   background: #fff;
   display: flex;
@@ -82,14 +141,5 @@ export default {
 
 .kontakt-info {
   flex: 1;
-}
-
-.anrufen-button {
-  background-color: #e1b47a;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
 }
 </style>

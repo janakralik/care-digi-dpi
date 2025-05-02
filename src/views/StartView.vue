@@ -1,244 +1,388 @@
 <template>
   <div class="startseite">
-    <!-- Bild und Titel -->
-    <div class="hero-section">
-      <img src="@/assets/Startseite.png" class="hero-image" />
-      <div class="hero-text">
-        <h1>CAREdigi</h1>
-        <p>Das digitale Zuhause für Senior*innen</p>
+    <!-- Hero-Bereich -->
+    <section class="hero-section">
+      <div class="hero-container">
+        <!-- Bildbereich zuerst -->
+        <div class="hero-image">
+          <img src="@/assets/Startseite.png" alt="Seniorin mit Tablet" />
+        </div>
+        <!-- Textbereich -->
+        <div class="hero-text">
+          <h1>Ihr digitales Zuhause</h1>
+          <p>
+            Mit CAREdigi behalten Sie den Überblick über Gesundheitsdaten,
+            Medikamente und Termine – einfach, sicher und übersichtlich.
+          </p>
+          <div class="button-container">
+            <router-link to="/" class="senioren-dashboard-button">
+              Senioren-Dashboard
+            </router-link>
+            <router-link to="/administration" class="administration-button">
+              Administration
+            </router-link>
+          </div>
+        </div>
       </div>
-
-      <!-- Buttons direkt unter dem Hero-Text -->
-      <div class="button-container">
-        <button class="senioren-dashboard-button">Senioren-Dashboard</button>
-        <button class="administration-button">Administration</button>
-      </div>
-    </div>
+    </section>
 
     <!-- Willkommensnachricht -->
-    <div class="einleitung welcome-text">
-      <h1 class="welcome-heading">Herzlich Willkommen bei CAREdigi!</h1>
-      <p>
-        Ihr digitales Zuhause, das Sie unterstützt und Ihnen den Alltag
-        erleichtert. Wir bieten eine Vielzahl von Funktionen, die Ihnen helfen,
-        sicher und selbstständig zu leben. Ob Sie Erinnerungen für wichtige
-        Aufgaben und Termine benötigen, sich über Ihre Gesundheitsdaten
-        informieren möchten oder die Verbindung zu Ihrem Arzt oder Ihrer Familie
-        suchen – mit CAREdigi haben Sie alles an einem Ort. Unsere Plattform ist
-        speziell darauf ausgelegt, den Bedürfnissen von Senior*innen gerecht zu
-        werden und bietet Ihnen eine benutzerfreundliche und sichere Umgebung.
-        Lassen Sie uns gemeinsam Ihre Lebensqualität verbessern und Ihnen den
-        Alltag noch angenehmer gestalten. Sie können sich darauf verlassen, dass
-        CAREdigi Ihnen immer zur Seite steht und Sie bei allen wichtigen
-        Aspekten des Lebens unterstützt.
-      </p>
-    </div>
+    <section class="welcome-section">
+      <div class="welcome-text">
+        <h1 class="welcome-heading">Herzlich Willkommen bei CAREdigi</h1>
+        <p>
+          Ihr digitales Zuhause, das Sie unterstützt und Ihnen den Alltag
+          erleichtert. Wir bieten eine Vielzahl von Funktionen, die Ihnen
+          helfen, sicher und selbstständig zu leben. Ob Sie Erinnerungen für
+          wichtige Aufgaben und Termine benötigen, sich über Ihre
+          Gesundheitsdaten informieren möchten oder die Verbindung zu Ihrem Arzt
+          oder Ihrer Familie suchen – mit CAREdigi haben Sie alles an einem Ort.
+          Unsere Plattform ist speziell darauf ausgelegt, den Bedürfnissen von
+          Senior*innen gerecht zu werden und bietet Ihnen eine
+          benutzerfreundliche und sichere Umgebung. Lassen Sie uns gemeinsam
+          Ihre Lebensqualität verbessern und Ihnen den Alltag noch angenehmer
+          gestalten. Wichtig: Die Seite wird von den Angehörigen administriert,
+          um sicherzustellen, dass alle Einstellungen und Informationen korrekt
+          verwaltet werden.
+        </p>
+      </div>
+    </section>
 
-    <!-- Funktionen als Rechtecke mit Icons -->
-    <div class="einleitung features">
-      <h1 class="features-heading">Die Funktionen</h1>
-      <div class="features-container">
-        <!-- Erinnerung (Kalender Icon) -->
-        <div class="feature-box">
-          <i class="fas fa-calendar-alt fa-3x"></i>
+    <!-- Features -->
+    <section class="features-modern">
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-item">
+          <div class="feature-icon-circle">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
           <h3>Erinnerungen</h3>
-          <p>
-            Erstellen Sie Erinnerungen für wichtige Aufgaben und Termine, um
-            Ihren Alltag zu organisieren und nichts zu vergessen.
+          <p class="feature-description">
+            Behalte wichtige Aufgaben und Termine stets im Blick.
           </p>
         </div>
 
-        <!-- Kontaktpersonen (Telefon Icon) -->
-        <div class="feature-box">
-          <i class="fas fa-phone-alt fa-3x"></i>
+        <!-- Feature 2 -->
+        <div class="feature-item">
+          <div class="feature-icon-circle">
+            <i class="fas fa-phone"></i>
+          </div>
           <h3>Kontaktpersonen</h3>
-          <p>
-            Verwalten Sie Ihre wichtigsten Kontakte und halten Sie den Kontakt
-            zu Familie und Freunden einfach und sicher.
+          <p class="feature-description">
+            Halte Verbindung zu den Menschen, die dir wichtig sind.
           </p>
         </div>
 
-        <!-- Externe Links (WWW Icon) -->
-        <div class="feature-box">
-          <i class="fas fa-link fa-3x"></i>
+        <!-- Feature 3 -->
+        <div class="feature-item">
+          <div class="feature-icon-circle">
+            <i class="fas fa-link"></i>
+          </div>
           <h3>Links zu externen Seiten</h3>
-          <p>
-            Nutzen Sie Links zu externen Seiten für wichtige Gesundheits- und
-            Verwaltungsinformationen, die Sie regelmäßig benötigen.
+          <p class="feature-description">
+            Greife schnell auf vertrauenswürdige Gesundheitsinfos zu.
           </p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Hinweis zur Administration -->
-    <div class="admin-note">
-      <p>
-        Wichtig: Die Seite wird von den Angehörigen administriert, um
-        sicherzustellen, dass alle Einstellungen und Informationen korrekt
-        verwaltet werden.
-      </p>
-    </div>
+    <!-- Fotos -->
+    <section class="photo-gallery">
+      <img src="@/assets/Startseite.png" alt="Foto 1" />
+      <img src="@/assets/Startseite2.png" alt="Foto 2" />
+      <img src="@/assets/Startseite3.png" alt="Foto 3" />
+    </section>
+
+    <!-- Testimonial -->
+    <section class="testimonial-section">
+      <div class="testimonial-card">
+        <p class="testimonial-text">
+          „Jetzt kann ich endlich alleine das Internet nutzen.“
+        </p>
+        <p class="testimonial-author">- Traudi</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+      <h2>Häufige Fragen</h2>
+      <details>
+        <summary>Wie funktioniert das Erstellen von Erinnerungen?</summary>
+        <p>
+          Die Angehörigen erstellen eine Erinnerung auf der
+          Administrationsseite.
+        </p>
+      </details>
+      <details>
+        <summary>Was passiert mit meinen Daten?</summary>
+        <p>
+          Ihre Daten werden sicher gespeichert und nur für die notwendigen
+          Funktionen verwendet.
+        </p>
+      </details>
+    </section>
   </div>
 </template>
 
 <style scoped>
 .startseite {
-  font-family: Arial, sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
-/* Hero Section */
+/* Hero */
 .hero-section {
-  position: relative;
-  width: 100%;
-  height: 800px; /* Größere Höhe für den Hero-Bereich */
-  overflow: hidden;
+  background-color: #fff5ec;
+  padding: 4rem 1rem;
 }
 
-.hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.9; /* Das Bild wird jetzt 50% transparent */
-}
-
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-  padding: 35px;
-  background-color: rgba(
-    250,
-    250,
-    250,
-    0.8
-  ); /* RGB für hellgrau mit Transparenz */
-  border-radius: 10px;
-  width: 80%;
-  max-width: 600px;
-}
-
-/* Buttons direkt unter dem Hero-Text */
-.button-container {
-  position: absolute;
-  top: 60%; /* Buttons unterhalb des Hero-Textes */
-  left: 50%;
-  transform: translateX(-50%);
+.hero-container {
+  margin: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .hero-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  .hero-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: left;
+    align-items: flex-start;
+    padding-left: 2rem;
+  }
+
+  .hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.hero-text p {
+  font-size: 1.125rem;
+  color: #555;
+}
+
+.button-container {
+  display: flex;
   gap: 20px;
-  z-index: 2;
+  flex-wrap: wrap;
 }
 
 .senioren-dashboard-button,
 .administration-button {
-  padding: 15px 30px;
+  padding: 12px 25px;
   border-radius: 8px;
   font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, border 0.3s ease;
+  font-weight: 600;
+  text-decoration: none;
+  min-width: 200px;
 }
 
 .senioren-dashboard-button {
-  background-color: #e1b47a;
+  background-color: #723381;
   color: white;
-  border: none;
 }
 
 .senioren-dashboard-button:hover {
-  background-color: #d59a5f;
+  background-color: #d49b6a;
 }
 
 .administration-button {
+  border: 3px solid #723381;
+  color: #723381;
   background-color: white;
-  color: #e1b47a;
-  border: 2px solid #e1b47a;
 }
 
 .administration-button:hover {
-  background-color: #e1b47a;
-  color: white;
+  background-color: #fff7ed;
 }
 
-/* Willkommensnachricht */
+/* Hero-Bild */
+.hero-image img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-mask-image: linear-gradient(to right, black 70%, transparent 100%);
+  mask-image: linear-gradient(to right, black 70%, transparent 100%);
+}
+
+/* Welcome */
+.welcome-section {
+  background: #f9f6fb;
+  padding: 60px 40px;
+  text-align: left;
+}
+
 .welcome-text {
-  padding: 20px;
-  text-align: left; /* Text jetzt links ausgerichtet */
+  max-width: 1000px;
+  margin: 0 auto;
   font-size: 18px;
-  color: #333;
-  max-width: 1400px; /* Maximalbreite für den Text */
-  margin: 0 auto; /* Zentriert */
+  line-height: 1.6;
 }
 
 .welcome-heading {
-  color: #e1b47a; /* Orange */
-  font-size: 30px;
-  text-align: left; /* Links ausgerichtet */
+  color: #723381;
   margin-bottom: 20px;
+  font-size: 36px;
+  font-weight: 700;
 }
 
-/* Funktionen */
-.features {
-  padding: 20px;
-  text-align: left; /* Text jetzt links ausgerichtet */
-  max-width: 1400px; /* Maximalbreite für den Funktionsbereich */
-  margin: 0 auto; /* Zentriert */
-}
-
-.features-heading {
-  color: #e1b47a;
-  font-size: 30px;
-  text-align: left; /* Links ausgerichtet */
-  margin-bottom: 20px;
-}
-
-.features-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.feature-box {
-  background: #eab377;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px #ccc;
+/* Features */
+.features-modern {
+  background: #fbe3ca;
+  padding: 60px 20px;
   text-align: center;
-  width: 30%; /* Jedes Rechteck nimmt 30% der Breite ein */
 }
 
-.feature-box i {
-  color: #fbe3ca; /* Farbige Icons */
+.features-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .features-grid {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.feature-item {
+  position: relative;
+  background: transparent;
+  text-align: center;
+  flex: 1;
+}
+
+.feature-icon-circle {
+  background: white;
+  border-radius: 50%;
+  padding: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.feature-icon-circle i {
+  font-size: 32px;
+  color: #723381;
+}
+
+.feature-item h3 {
+  font-size: 20px;
+  color: #000000;
   margin-bottom: 10px;
 }
 
-.feature-box h3 {
-  color: #fbe3ca;
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.feature-box p {
-  color: #333;
+.feature-description {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  color: black;
   font-size: 16px;
 }
 
-/* Admin Note */
-.admin-note {
-  padding: 20px;
-  text-align: left; /* Text jetzt links ausgerichtet */
-  font-size: 18px;
+.feature-item:hover .feature-description {
+  opacity: 1;
+  height: auto;
+}
+
+/* Fotos */
+.photo-gallery {
+  display: flex;
+  justify-content: space-between;
+  gap: 0; /* <-- Abstand komplett entfernt */
+  margin: 40px 0;
+}
+
+.photo-gallery img {
+  width: 33.3333%; /* exakt ein Drittel */
+  border-radius: 0; /* Keine Rundungen */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-fit: cover; /* falls die Höhe unterschiedlich wäre */
+}
+
+/* Testimonial */
+.testimonial-section {
+  background: #fbe3ca;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.testimonial-card {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.testimonial-text {
+  font-size: 20px;
+  font-style: italic;
+  color: #555;
+}
+
+.testimonial-author {
+  font-weight: bold;
+  margin-top: 10px;
   color: #333;
 }
 
-/* Die Einleitungsbox */
-.einleitung {
-  margin-bottom: 40px;
-  background: white;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0px 0px 5px #ccc;
+/* FAQ */
+.faq-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.faq-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #723381;
+}
+
+details {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+details summary {
+  font-weight: bold;
+  color: #333;
+}
+
+details[open] summary {
+  color: #e1b47a;
+}
+
+details p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
 }
 </style>
