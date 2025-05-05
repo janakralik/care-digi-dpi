@@ -4,15 +4,12 @@
     <section class="hero-section">
       <div class="hero-container">
         <!-- Bildbereich zuerst -->
-        <div class="hero-image">
-          <img src="@/assets/Startseite.png" alt="Seniorin mit Tablet" />
-        </div>
         <!-- Textbereich -->
         <div class="hero-text">
           <h1>Ihr digitales Zuhause</h1>
           <p>
-            Mit CAREdigi behalten Sie den Überblick über Gesundheitsdaten,
-            Medikamente und Termine – einfach, sicher und übersichtlich.
+            CAREdigi macht den digitalen Alltag für Senior*innen einfach,
+            vertraut und zugänglich.
           </p>
           <div class="button-container">
             <router-link to="/" class="senioren-dashboard-button">
@@ -29,21 +26,35 @@
     <!-- Willkommensnachricht -->
     <section class="welcome-section">
       <div class="welcome-text">
-        <h1 class="welcome-heading">Herzlich Willkommen bei CAREdigi</h1>
+        <h1 class="welcome-heading">
+          Willkommen bei CAREdigi: Ihre digitale Unterstützung
+        </h1>
         <p>
-          Ihr digitales Zuhause, das Sie unterstützt und Ihnen den Alltag
-          erleichtert. Wir bieten eine Vielzahl von Funktionen, die Ihnen
-          helfen, sicher und selbstständig zu leben. Ob Sie Erinnerungen für
-          wichtige Aufgaben und Termine benötigen, sich über Ihre
-          Gesundheitsdaten informieren möchten oder die Verbindung zu Ihrem Arzt
-          oder Ihrer Familie suchen – mit CAREdigi haben Sie alles an einem Ort.
-          Unsere Plattform ist speziell darauf ausgelegt, den Bedürfnissen von
-          Senior*innen gerecht zu werden und bietet Ihnen eine
-          benutzerfreundliche und sichere Umgebung. Lassen Sie uns gemeinsam
-          Ihre Lebensqualität verbessern und Ihnen den Alltag noch angenehmer
-          gestalten. Wichtig: Die Seite wird von den Angehörigen administriert,
-          um sicherzustellen, dass alle Einstellungen und Informationen korrekt
-          verwaltet werden.
+          CAREdigi ist eine speziell für Seniorinnen entwickelte Webanwendung,
+          die den Einstieg und Umgang mit der digitalen Welt erleichtert. In
+          einer übersichtlichen und leicht verständlichen Umgebung finden
+          Seniorinnen alle wichtigen Informationen an einem Ort: Erinnerungen an
+          Termine oder Medikamente, nützliche Links zu Ärzten, Apotheken oder
+          Angehörigen – alles zentral auf einem persönlichen Dashboard. Das
+          Besondere an CAREdigi: Seniorinnen müssen sich nicht selbst um die
+          Pflege der Inhalte kümmern. Stattdessen übernehmen Angehörige oder
+          Betreuerinnen die Verwaltung der Seite. Sie können Erinnerungen und
+          wichtige Links einfach hinterlegen und aktuell halten. Dadurch bleiben
+          die Nutzer*innen stets bestens informiert, ohne sich mit komplizierten
+          Einstellungen auseinandersetzen zu müssen. Viele ältere Menschen
+          fühlen sich im Umgang mit digitalen Geräten unsicher oder überfordert.
+          CAREdigi begegnet dieser Herausforderung mit einem klaren Ziel: mehr
+          Unabhängigkeit, mehr Sicherheit und ein gutes Gefühl im digitalen
+          Alltag. Die intuitive Bedienung gibt Senior*innen Vertrauen und
+          Orientierung – und ermöglicht ihnen, digitale Dienste auf einfache
+          Weise zu nutzen. Auch für Angehörige ist CAREdigi eine echte
+          Entlastung. Sie können die Inhalte jederzeit anpassen und wissen, dass
+          ihre Liebsten im Alltag bestmöglich unterstützt werden. CAREdigi
+          funktioniert geräteunabhängig: egal ob am PC, Tablet oder Smartphone –
+          ohne zusätzliche Hardware. Damit ist CAREdigi eine moderne,
+          benutzerfreundliche und umfassende Lösung, die Senior*innen einen
+          sicheren Platz im Internet bietet und ihre Lebensqualität nachhaltig
+          verbessert.
         </p>
       </div>
     </section>
@@ -58,7 +69,11 @@
           </div>
           <h3>Erinnerungen</h3>
           <p class="feature-description">
-            Behalte wichtige Aufgaben und Termine stets im Blick.
+            Mit CAREdigi erhalten Seniorinnen hilfreiche Erinnerungen für
+            wichtige Aufgaben und Termine – zum Beispiel Arztbesuche, die
+            Einnahme von Medikamenten oder Alltagserledigungen. Angehörige legen
+            diese Erinnerungen an, damit alles Wichtige rechtzeitig angezeigt
+            wird – ganz ohne zusätzlichen Aufwand für die Seniorinnen.
           </p>
         </div>
 
@@ -69,7 +84,11 @@
           </div>
           <h3>Kontaktpersonen</h3>
           <p class="feature-description">
-            Halte Verbindung zu den Menschen, die dir wichtig sind.
+            In CAREdigi können die wichtigsten Kontaktpersonen wie
+            Familienmitglieder, Freunde oder Ärzte hinterlegt werden. So haben
+            Senior*innen jederzeit schnellen Zugriff auf alle wichtigen
+            Telefonnummern und Kontaktdaten – übersichtlich, sicher und einfach
+            abrufbar.
           </p>
         </div>
 
@@ -80,17 +99,48 @@
           </div>
           <h3>Links zu externen Seiten</h3>
           <p class="feature-description">
-            Greife schnell auf vertrauenswürdige Gesundheitsinfos zu.
+            Ob Apotheke, Hausarztpraxis oder wichtige Informationsseiten –
+            CAREdigi ermöglicht den direkten Zugriff auf vertrauenswürdige
+            Links. Angehörige hinterlegen die passenden Webseiten, sodass
+            Senior*innen sie leicht finden und sicher nutzen können, ohne lange
+            suchen zu müssen.
           </p>
         </div>
       </div>
     </section>
 
+    <!-- Warum CAREdigi -->
+    <section class="why-caredigi-section">
+      <div class="why-caredigi-content">
+        <h2>Warum CAREdigi?</h2>
+        <p>
+          CAREdigi macht die digitale Welt einfach zugänglich. Keine
+          komplizierten Apps, keine verwirrenden Menüs – stattdessen eine klare
+          Übersicht, individuell angepasst an Ihre Bedürfnisse. Für ein sicheres
+          Gefühl und mehr Selbstständigkeit im Alltag.
+        </p>
+      </div>
+    </section>
+
     <!-- Fotos -->
     <section class="photo-gallery">
-      <img src="@/assets/Startseite.png" alt="Foto 1" />
+      <img src="@/assets/Startseite1.png" alt="Foto 1" />
       <img src="@/assets/Startseite2.png" alt="Foto 2" />
       <img src="@/assets/Startseite3.png" alt="Foto 3" />
+    </section>
+
+    <!-- Vorteile -->
+    <section class="advantages-section">
+      <div class="advantages-content">
+        <h2>Ihre Vorteile mit CAREdigi</h2>
+        <ul>
+          <li>Einfache Nutzung ohne technisches Vorwissen</li>
+          <li>Persönliche Betreuung durch Angehörige</li>
+          <li>Alles Wichtige auf einen Blick</li>
+          <li>Sicherer Zugang über PC, Tablet oder Smartphone</li>
+          <li>Mehr Selbstständigkeit im digitalen Alltag</li>
+        </ul>
+      </div>
     </section>
 
     <!-- Testimonial -->
@@ -99,25 +149,76 @@
         <p class="testimonial-text">
           „Jetzt kann ich endlich alleine das Internet nutzen.“
         </p>
-        <p class="testimonial-author">- Traudi</p>
+        <p class="testimonial-author">- Traudi (86 Jahre)</p>
       </div>
     </section>
 
     <!-- FAQ -->
     <section class="faq-section">
       <h2>Häufige Fragen</h2>
+
       <details>
         <summary>Wie funktioniert das Erstellen von Erinnerungen?</summary>
         <p>
-          Die Angehörigen erstellen eine Erinnerung auf der
-          Administrationsseite.
+          Die Angehörigen erstellen über die Administrationsseite Erinnerungen,
+          die automatisch auf dem Dashboard der Senior*innen angezeigt werden.
         </p>
       </details>
+
+      <details>
+        <summary>Wer kann meine CAREdigi-Seite verwalten?</summary>
+        <p>
+          Die Verwaltung übernehmen ausschließlich Ihre vertrauten Angehörigen.
+          Sie richten Erinnerungen, Links und Kontakte für Sie ein.
+        </p>
+      </details>
+
+      <details>
+        <summary>Muss ich selbst Einstellungen vornehmen?</summary>
+        <p>
+          Nein, Sie müssen nichts selbst einstellen. Alle Inhalte werden von
+          Ihren Angehörigen gepflegt, sodass Sie einfach alles Wichtige auf
+          einen Blick sehen.
+        </p>
+      </details>
+
       <details>
         <summary>Was passiert mit meinen Daten?</summary>
         <p>
-          Ihre Daten werden sicher gespeichert und nur für die notwendigen
-          Funktionen verwendet.
+          Ihre Daten werden sicher gespeichert und ausschließlich für die
+          Funktionen von CAREdigi verwendet. Es erfolgt keine Weitergabe an
+          Dritte.
+        </p>
+      </details>
+
+      <details>
+        <summary>
+          Kann ich CAREdigi auf meinem Smartphone oder Tablet nutzen?
+        </summary>
+        <p>
+          Ja, CAREdigi funktioniert auf allen gängigen Geräten wie PC, Tablet
+          oder Smartphone – ohne zusätzliche Apps oder spezielle Hardware.
+        </p>
+      </details>
+
+      <details>
+        <summary>
+          Welche Informationen werden auf meinem Dashboard angezeigt?
+        </summary>
+        <p>
+          Sie sehen Ihre aktuellen Erinnerungen, wichtige Kontakte und nützliche
+          Links – alles übersichtlich und einfach zugänglich an einem Ort.
+        </p>
+      </details>
+
+      <details>
+        <summary>
+          Was passiert, wenn sich etwas ändert (z.B. neue Termine)?
+        </summary>
+        <p>
+          Ihre Angehörigen können jederzeit Änderungen oder neue Informationen
+          einpflegen. Ihr Dashboard wird automatisch aktualisiert, ohne dass Sie
+          etwas tun müssen.
         </p>
       </details>
     </section>
@@ -131,8 +232,11 @@
 
 /* Hero */
 .hero-section {
-  background-color: #fff5ec;
-  padding: 4rem 1rem;
+  background: url("@/assets/Startseite.png") no-repeat center center;
+  background-size: cover;
+  padding: 8rem 2rem;
+  color: white; /* Textfarbe auf dem Bild besser sichtbar */
+  position: relative;
 }
 
 .hero-container {
@@ -173,12 +277,12 @@
 .hero-text h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #000000;
+  color: #ffffff;
 }
 
 .hero-text p {
   font-size: 1.125rem;
-  color: #555;
+  color: #ffffff;
 }
 
 .button-container {
@@ -328,7 +432,7 @@
 
 /* Testimonial */
 .testimonial-section {
-  background: #fbe3ca;
+  background: #f9f6fb;
   padding: 40px 20px;
   text-align: center;
 }
@@ -359,7 +463,7 @@
 
 .faq-section h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
   color: #723381;
 }
 
@@ -384,5 +488,60 @@ details p {
   margin-top: 10px;
   font-size: 16px;
   color: #555;
+}
+
+/* Warum CAREdigi */
+.why-caredigi-section {
+  background: #f9f6fb;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.why-caredigi-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.why-caredigi-content h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #723381;
+}
+
+.why-caredigi-content p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Vorteile */
+.advantages-section {
+  background: #fbe3ca;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.advantages-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.advantages-content h2 {
+  color: #723381;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.advantages-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.advantages-content li {
+  font-size: 18px;
+  color: #555;
+  margin: 10px 0;
+  position: relative;
+  padding-left: 25px;
 }
 </style>

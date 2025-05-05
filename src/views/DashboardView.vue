@@ -12,12 +12,12 @@
           im Überblick und hake sie einfach ab.
         </li>
         <li>
-          <a href="#kontakte">📞 Ansprechpartner</a> – Ruf schnell wichtige
-          Personen an, wenn du Hilfe brauchst.
-        </li>
-        <li>
           <a href="#links">🌐 Wichtige Seiten</a> – Direktzugriff auf deine
           wichtigsten Online-Dienste.
+        </li>
+        <li>
+          <a href="#kontakte">📞 Ansprechpartner</a> – Ruf schnell wichtige
+          Personen an, wenn du Hilfe brauchst.
         </li>
       </ul>
     </div>
@@ -26,11 +26,11 @@
     <div id="erinnerungen">
       <erinnerungenComponent />
     </div>
-    <div id="kontakte">
-      <kontakteComponent />
-    </div>
     <div id="links">
       <linksComponent />
+    </div>
+    <div id="kontakte">
+      <kontakteComponent />
     </div>
   </div>
 </template>
@@ -59,7 +59,7 @@ export default {
 }
 
 .einleitung {
-  margin-bottom: 40px;
+  margin-bottom: 60px; /* Mehr Abstand nach unten */
   background: white;
   padding: 20px;
   border-radius: 20px;
@@ -77,7 +77,7 @@ export default {
 }
 
 .einleitungsliste li {
-  margin-bottom: 10px;
+  margin-bottom: 15px; /* Etwas mehr Abstand zwischen den Listenelementen */
   font-size: 18px;
 }
 
@@ -89,5 +89,12 @@ export default {
 
 .einleitungsliste a:hover {
   text-decoration: underline;
+}
+
+/* Mehr Abstand zwischen den Komponenten */
+#erinnerungen,
+#kontakte,
+#links {
+  margin-bottom: 40px; /* Abstand zwischen den Komponenten */
 }
 </style>

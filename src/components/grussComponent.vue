@@ -1,11 +1,9 @@
-/* eslint-disable vue/multi-word-component-names */
-
 <template>
   <div class="greeting-container">
     <div class="greeting-box"></div>
     <div class="greeting-text">
       <span>Guten Morgen Hilde! Heute ist </span>
-      <span class="highlight">Montag, der 25. März.</span>
+      <span class="highlight">{{ aktuellesDatum }}</span>
     </div>
     <div class="temperature">14 °C</div>
     <div class="weather-icon">
@@ -14,12 +12,54 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      aktuellesDatum: "",
+    };
+  },
+  mounted() {
+    const heute = new Date();
+    const wochentage = [
+      "Sonntag",
+      "Montag",
+      "Dienstag",
+      "Mittwoch",
+      "Donnerstag",
+      "Freitag",
+      "Samstag",
+    ];
+    const monate = [
+      "Januar",
+      "Februar",
+      "März",
+      "April",
+      "Mai",
+      "Juni",
+      "Juli",
+      "August",
+      "September",
+      "Oktober",
+      "November",
+      "Dezember",
+    ];
+
+    const wochentag = wochentage[heute.getDay()];
+    const tag = heute.getDate();
+    const monat = monate[heute.getMonth()];
+
+    this.aktuellesDatum = `${wochentag}, der ${tag}. ${monat}.`;
+  },
+};
+</script>
+
 <style>
 .greeting-container {
   position: relative;
   width: 100%;
   height: 250px;
-  top: -100px;
+  top: -70px;
   display: flex;
   justify-content: center;
   align-items: center;

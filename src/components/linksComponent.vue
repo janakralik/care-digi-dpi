@@ -4,11 +4,21 @@
       <h2 class="section-title">Meine wichtigsten Seiten</h2>
 
       <div class="links-grid">
-        <div v-for="(link, index) in links" :key="index" class="link-card">
+        <a
+          v-for="(link, index) in links"
+          :key="index"
+          :href="link.url"
+          class="link-card"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img :src="link.icon" alt="Icon" class="link-icon" />
           <div class="link-name">{{ link.name }}</div>
+          <div class="link-details">
+            <p>{{ link.beschreibung }}</p>
+          </div>
           <button class="hilfe-button">HILFE</button>
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -18,33 +28,36 @@
 export default {
   data() {
     return {
-      links: [
-        { name: "Hausarzt Dr. Pum", icon: "pfad/zu/icon1.png" },
-        { name: "Raiffeisen Bank", icon: "pfad/zu/icon2.png" },
-        { name: "Optiker Oppenborn", icon: "pfad/zu/icon3.png" },
-      ],
+      links: [],
     };
+  },
+  mounted() {
+    const gespeicherteLinks = localStorage.getItem("links");
+    if (gespeicherteLinks) {
+      this.links = JSON.parse(gespeicherteLinks);
+    }
   },
 };
 </script>
 
 <style scoped>
 .background-wrapper {
-  background-color: white; /* Weißer Hintergrund */
+  background-color: white;
   padding: 20px;
   border-radius: 20px;
   margin-bottom: 20px;
-  box-shadow: 0px 0px 10px #ccc; /* Leichter Schatten */
+  box-shadow: 0px 0px 10px #ccc;
 }
 
 .section-title {
   background-color: #6d3a8c;
   color: white;
   padding: 10px;
+  display: inline-block;
   border-radius: 20px;
   font-size: 22px;
-  margin: 0 0 20px 0; /* Abstand nach unten */
-  border-top: 5px solid #6d3a8c; /* Lila Rand oben */
+  margin: 0 0 20px 0;
+  border-top: 5px solid #6d3a8c;
 }
 
 .links-grid {
@@ -61,6 +74,16 @@ export default {
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0px 0px 10px #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s;
+}
+
+.link-card:hover {
+  transform: scale(1.05);
 }
 
 .link-icon {
@@ -71,8 +94,15 @@ export default {
 
 .link-name {
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-size: 18px;
+}
+
+.link-details {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .hilfe-button {

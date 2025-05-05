@@ -26,6 +26,7 @@
         <div class="info">
           <strong>{{ item.title }}</strong>
           <p>{{ item.beschreibung }}</p>
+          <small>{{ item.datum }} um {{ item.uhrzeit }}</small>
         </div>
         <button @click="toggleDone(index)" class="done-button">✔️</button>
       </div>
@@ -46,31 +47,19 @@ export default {
         { tag: "SA", datum: 29 },
         { tag: "SO", datum: 30 },
       ],
-      erinnerungen: [
-        {
-          title: "Blutdrucktabletten nehmen",
-          beschreibung: "Um 08.00 und 18.00 - Lade neben dem Bett.",
-          done: false,
-          icon: "pfad/zu/icon1.png",
-        },
-        {
-          title: "Lena Geburtstag",
-          beschreibung: "Lena feiert heute. 🎉",
-          done: false,
-          icon: "pfad/zu/icon2.png",
-        },
-        {
-          title: "Abhof-Verkauf",
-          beschreibung: "Abhof-Verkauf beim Bauern.",
-          done: false,
-          icon: "pfad/zu/icon3.png",
-        },
-      ],
+      erinnerungen: [],
     };
+  },
+  mounted() {
+    const gespeicherte = localStorage.getItem("erinnerungen");
+    if (gespeicherte) {
+      this.erinnerungen = JSON.parse(gespeicherte);
+    }
   },
   methods: {
     toggleDone(index) {
       this.erinnerungen[index].done = !this.erinnerungen[index].done;
+      localStorage.setItem("erinnerungen", JSON.stringify(this.erinnerungen));
     },
   },
 };
@@ -78,17 +67,18 @@ export default {
 
 <style scoped>
 .background-wrapper {
-  background-color: white; /* Weißer Hintergrund */
+  background-color: white;
   padding: 20px;
   border-radius: 20px;
   margin-bottom: 20px;
-  box-shadow: 0px 0px 10px #ccc; /* Leichter Schatten */
+  box-shadow: 0px 0px 10px #ccc;
 }
 
 .section-title {
   background-color: #6d3a8c;
   color: white;
   padding: 10px;
+  display: inline-block;
   border-radius: 20px;
   font-size: 22px;
   margin-bottom: 20px;
@@ -97,7 +87,7 @@ export default {
 .kalender {
   display: flex;
   justify-content: space-around;
-  background: white; /* Weißer Hintergrund */
+  background: white;
   border-radius: 15px;
   padding: 10px;
   margin-bottom: 20px;
@@ -121,8 +111,8 @@ export default {
   margin: 10px 0;
   padding: 15px;
   border-radius: 10px;
-  border: 1px solid #efd1b0; /* Orange Rand */
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+  border: 1px solid #efd1b0;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
 .icon {

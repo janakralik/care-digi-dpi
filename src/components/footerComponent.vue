@@ -5,13 +5,12 @@
     <div class="contact-info">
       Softwarepark 11, 4232 Hagenberg im Mühlkreis<br />
       Telefon: +123456<br />
-      E-Mail: <a href="mailto:office@caredigi.at">office@caredigi.at</a
-      ><br /><br />
+      E-Mail: <a href="mailto:office@caredigi.at">office@caredigi.at</a><br /><br />
       © 2025 CAREdigi.
     </div>
     <div class="links">
-      <a href="impressum.html" class="nav-item active">Impressum</a>
-      <a href="datenschutz.html" class="nav-item active">Datenschutz</a>
+      <router-link to="/impressum" class="nav-item active">Impressum</router-link>
+      <router-link to="/datenschutz" class="nav-item active">Datenschutz</router-link>
     </div>
   </div>
 </template>

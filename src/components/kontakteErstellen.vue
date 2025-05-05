@@ -1,29 +1,39 @@
 <template>
   <div class="background-wrapper">
-    <h2 class="section-title">Neuen Ansprechpartner hinzufügen</h2>
+    <h2 class="section-title">Ansprechpartner</h2>
 
-    <form @submit.prevent="addKontakt" class="kontakt-formular">
-      <input
-        v-model="newKontakt.name"
-        type="text"
-        placeholder="Name"
-        required
-      />
-      <input
-        v-model="newKontakt.telefon"
-        type="text"
-        placeholder="Telefonnummer"
-        required
-      />
-      <input
-        v-model="newKontakt.foto"
-        type="text"
-        placeholder="Foto-URL"
-        required
-      />
-      <button type="submit">Hinzufügen</button>
-    </form>
+    <!-- Button zum Ein- und Ausklappen des Formulars -->
+    <button @click="toggleForm" class="toggle-button">
+      Neuen Ansprechpartner hinzufügen
+    </button>
 
+    <!-- Formular zum Hinzufügen eines neuen Ansprechpartners, standardmäßig ausgeblendet -->
+    <div v-if="formVisible">
+      <form @submit.prevent="addKontakt" class="kontakt-formular">
+        <input
+          v-model="newKontakt.name"
+          type="text"
+          placeholder="Name"
+          required
+        />
+        <input
+          v-model="newKontakt.telefon"
+          type="text"
+          placeholder="Telefonnummer"
+          required
+        />
+        <input
+          type="file"
+          @change="handleFileUpload"
+          accept="image/*"
+          ref="fileInput"
+          required
+        />
+        <button type="submit">Hinzufügen</button>
+      </form>
+    </div>
+
+    <!-- Bereits hinzugefügte Kontakte -->
     <div class="kontakte">
       <h3>Bereits hinzugefügt:</h3>
 
@@ -37,6 +47,9 @@
           <strong>{{ kontakt.name }}</strong>
           <p>{{ kontakt.telefon }}</p>
         </div>
+        <button class="entfernen-button" @click="removeKontakt(index)">
+          Entfernen
+        </button>
       </div>
     </div>
   </div>
@@ -52,6 +65,7 @@ export default {
         telefon: "",
         foto: "",
       },
+      formVisible: false, // Steuert die Sichtbarkeit des Formulars
     };
   },
   mounted() {
@@ -61,7 +75,22 @@ export default {
     }
   },
   methods: {
+    handleFileUpload(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          this.newKontakt.foto = e.target.result; // Base64-String
+        };
+        reader.readAsDataURL(file);
+      }
+    },
     addKontakt() {
+      if (!this.newKontakt.foto) {
+        alert("Bitte ein Foto hochladen!");
+        return;
+      }
+
       this.kontakte.push({ ...this.newKontakt });
       localStorage.setItem("kontakte", JSON.stringify(this.kontakte));
 
@@ -69,6 +98,14 @@ export default {
       this.newKontakt.name = "";
       this.newKontakt.telefon = "";
       this.newKontakt.foto = "";
+      this.$refs.fileInput.value = "";
+    },
+    removeKontakt(index) {
+      this.kontakte.splice(index, 1);
+      localStorage.setItem("kontakte", JSON.stringify(this.kontakte));
+    },
+    toggleForm() {
+      this.formVisible = !this.formVisible; // Wechselt den Zustand der Formularsichtbarkeit
     },
   },
 };
@@ -91,6 +128,17 @@ export default {
   font-size: 22px;
   margin: 0 0 20px 0;
   border-top: 5px solid #6d3a8c;
+}
+
+.toggle-button {
+  background-color: #eab377;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .kontakt-formular {
@@ -129,6 +177,7 @@ export default {
   border: 1px solid #efd1b0;
   border-radius: 10px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .kontakt-foto {
@@ -141,5 +190,16 @@ export default {
 
 .kontakt-info {
   flex: 1;
+}
+
+.entfernen-button {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 10px;
 }
 </style>
