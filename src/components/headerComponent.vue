@@ -44,17 +44,18 @@
 .header {
   position: relative;
   width: 100%;
-  height: 150px;
-  background-color: #eab377;
+  height: 130px;
+  background: linear-gradient(to right, #eab377 0%, #fedeba 50%, #eab377 100%);
+
   z-index: 0;
 }
 
 /* Korrekte Klassenzuweisung und kleinere Größe */
 .logo {
   position: absolute;
-  top: 20px;
+  top: 0px;
   left: 30px;
-  width: 100px;
+  width: 150px;
   height: auto;
   cursor: pointer; /* Zeigt Hand-Cursor an, wenn man mit der Maus drüberfährt */
 }

@@ -2,6 +2,12 @@
   <div class="background-wrapper">
     <div class="links">
       <h2 class="section-title">Meine wichtigsten Seiten</h2>
+      <p class="einleitungstext">
+        Hier findest du direkte Links zu den Internetseiten, die du regelmäßig
+        brauchst – zum Beispiel für Gesundheit, Behörden oder Informationen. Du
+        musst nicht lange suchen oder tippen, sondern kommst mit einem Klick
+        dorthin, wo du hinmöchtest.
+      </p>
 
       <div class="links-grid">
         <a
@@ -47,6 +53,15 @@ export default {
   border-radius: 20px;
   margin-bottom: 20px;
   box-shadow: 0px 0px 10px #ccc;
+}
+
+.einleitungstext {
+  font-size: 18px;
+  color: #4f4f4f;
+  margin-bottom: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
+  line-height: 1.6;
 }
 
 .section-title {

@@ -83,6 +83,7 @@ export default {
   align-items: center;
   z-index: 1;
   text-align: center;
+  color: #4f4f4f;
 }
 
 .greeting-text span {

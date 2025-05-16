@@ -4,21 +4,26 @@
     <div class="einleitung">
       <h2>Willkommen im Administrationsbereich!</h2>
       <p>
-        Hier können Sie die Homepage Ihrer Liebsten ganz einfach verwalten und
-        anpassen.
+        Willkommen im Administrationsbereich Hier kannst du alles verwalten, was
+        die App betrifft. Du hast die Möglichkeit, Inhalte zu bearbeiten, neue
+        Erinnerungen hinzuzufügen oder bestehende Einträge zu aktualisieren und
+        zu löschen. Dieser Bereich ist speziell dafür da, um dir die
+        Organisation zu erleichtern und sicherzustellen, dass alle Informationen
+        für die Nutzer:innen aktuell und hilfreich sind. Nimm dir Zeit, schau
+        dich um und gestalte die App so, wie sie am besten passt!
       </p>
       <ul class="einleitungsliste">
         <li>
-          <a href="#erinnerungen">📝 Erinnerungen</a> – Erstellen Sie
-          Erinnerungen, damit kein Termin vergessen wird.
+          <a href="#erinnerungen">Erinnerungen</a> – Erstellen Sie Erinnerungen,
+          damit kein Termin vergessen wird.
         </li>
         <li>
-          <a href="#links">🌐 Wichtige Seiten</a> – Verwalten Sie Links zu
+          <a href="#links">Wichtige Seiten</a> – Verwalten Sie Links zu
           bevorzugten Websites.
         </li>
         <li>
-          <a href="#kontakte">📞 Ansprechpartner</a> – Fügen Sie wichtige
-          Kontakte hinzu.
+          <a href="#kontakte">Ansprechpartner</a> – Fügen Sie wichtige Kontakte
+          hinzu.
         </li>
       </ul>
     </div>
@@ -41,13 +46,13 @@
 <script>
 import KontakteErstellen from "@/components/kontakteErstellen.vue";
 import LinkErstellen from "@/components/linksErstellen.vue";
-import ErinnerungErstellen from "@/components/erinnerungenErstellen.vue"; // <- Neu hinzugefügt
+import ErinnerungErstellen from "@/components/erinnerungenErstellen.vue";
 
 export default {
   components: {
     KontakteErstellen,
     LinkErstellen,
-    ErinnerungErstellen, // <- Neu hinzugefügt
+    ErinnerungErstellen,
   },
 };
 </script>
@@ -66,15 +71,15 @@ p {
 }
 
 .einleitung {
-  margin-bottom: 60px; /* Mehr Abstand nach unten */
-  background: white;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0px 0px 5px #ccc;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  padding-left: 20px;
+  align: center;
+  color: #4f4f4f;
 }
 
 .einleitung h2 {
-  color: #6d3a8c;
+  color: #4f4f4f;
   margin-bottom: 10px;
 }
 

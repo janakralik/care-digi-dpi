@@ -5,7 +5,12 @@
     <!-- Einleitungstext -->
     <div class="einleitung">
       <h2>Was möchtest du heute machen?</h2>
-      <p>Hier findest du alles Wichtige auf einen Blick:</p>
+      <p>
+        Schön, dass du da bist! Dieses Dashboard hilft dir dabei, deinen Tag
+        ganz einfach im Blick zu behalten. Du siehst auf einen Blick, welcher
+        Wochentag heute ist, und findest alle wichtigen Termine, Erinnerungen
+        und Aufgaben an einem Ort.
+      </p>
       <ul class="einleitungsliste">
         <li>
           <a href="#erinnerungen">📝 Erinnerungen</a> – Behalte deine Aufgaben
@@ -19,6 +24,9 @@
           <a href="#kontakte">📞 Ansprechpartner</a> – Ruf schnell wichtige
           Personen an, wenn du Hilfe brauchst.
         </li>
+        <li>
+          <a href="#ausfluege">🌸 Ausflüge</a> – Finde Ausflüge in deiner Nähe.
+        </li>
       </ul>
     </div>
 
@@ -26,11 +34,14 @@
     <div id="erinnerungen">
       <erinnerungenComponent />
     </div>
+    <div id="kontakte">
+      <kontakteComponent />
+    </div>
     <div id="links">
       <linksComponent />
     </div>
-    <div id="kontakte">
-      <kontakteComponent />
+    <div id="ausfluege">
+      <ausflugComponent />
     </div>
   </div>
 </template>
@@ -40,6 +51,7 @@ import grussComponent from "@/components/grussComponent.vue";
 import erinnerungenComponent from "@/components/erinnerungenComponent.vue";
 import kontakteComponent from "@/components/kontakteComponent.vue";
 import linksComponent from "@/components/linksComponent.vue";
+import ausflugComponent from "@/components/ausflugComponent.vue";
 
 export default {
   components: {
@@ -47,38 +59,45 @@ export default {
     erinnerungenComponent,
     kontakteComponent,
     linksComponent,
+    ausflugComponent,
   },
 };
 </script>
 
 <style scoped>
 .dashboard-wrapper {
-  background-color: #fafafa;
+  background-color: #ffffff;
   padding: 20px;
   border-radius: 20px;
 }
 
 .einleitung {
   margin-bottom: 60px; /* Mehr Abstand nach unten */
-  background: white;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0px 0px 5px #ccc;
+  padding-left: 20px;
+  align: center;
 }
 
 .einleitung h2 {
-  color: #6d3a8c;
+  color: #4f4f4f;
   margin-bottom: 10px;
+}
+
+.einleitung p {
+  color: #4f4f4f;
+  margin-bottom: 10px;
+  font-size: 18px;
 }
 
 .einleitungsliste {
   list-style: none;
   padding: 0;
+  padding-top: 10px;
 }
 
 .einleitungsliste li {
   margin-bottom: 15px; /* Etwas mehr Abstand zwischen den Listenelementen */
   font-size: 18px;
+  color: #4f4f4f;
 }
 
 .einleitungsliste a {
@@ -94,7 +113,12 @@ export default {
 /* Mehr Abstand zwischen den Komponenten */
 #erinnerungen,
 #kontakte,
-#links {
-  margin-bottom: 40px; /* Abstand zwischen den Komponenten */
+#links,
+#ausfluege {
+  margin-bottom: 90px; /* Abstand zwischen den Komponenten */
+}
+
+#erinnerungen {
+  margin-top: 80px;
 }
 </style>

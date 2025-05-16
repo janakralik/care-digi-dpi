@@ -35,8 +35,12 @@
           einer übersichtlichen und leicht verständlichen Umgebung finden
           Seniorinnen alle wichtigen Informationen an einem Ort: Erinnerungen an
           Termine oder Medikamente, nützliche Links zu Ärzten, Apotheken oder
-          Angehörigen – alles zentral auf einem persönlichen Dashboard. Das
-          Besondere an CAREdigi: Seniorinnen müssen sich nicht selbst um die
+          Angehörigen – alles zentral auf einem persönlichen Dashboard.
+          <span v-if="!showMore">…</span>
+        </p>
+
+        <p v-if="showMore">
+          Das Besondere an CAREdigi: Seniorinnen müssen sich nicht selbst um die
           Pflege der Inhalte kümmern. Stattdessen übernehmen Angehörige oder
           Betreuerinnen die Verwaltung der Seite. Sie können Erinnerungen und
           wichtige Links einfach hinterlegen und aktuell halten. Dadurch bleiben
@@ -56,6 +60,17 @@
           sicheren Platz im Internet bietet und ihre Lebensqualität nachhaltig
           verbessert.
         </p>
+
+        <button
+          v-if="!showMore"
+          @click="showMore = true"
+          class="mehr-lesen-button"
+        >
+          mehr lesen
+        </button>
+        <button v-else @click="showMore = false" class="mehr-lesen-button">
+          weniger anzeigen
+        </button>
       </div>
     </section>
 
@@ -129,6 +144,16 @@
       <img src="@/assets/Startseite3.png" alt="Foto 3" />
     </section>
 
+    <!-- Testimonial -->
+    <section class="testimonial-section">
+      <div class="testimonial-card">
+        <p class="testimonial-text">
+          „Jetzt kann ich endlich alleine das Internet nutzen.“
+        </p>
+        <p class="testimonial-author">- Traudi (86 Jahre)</p>
+      </div>
+    </section>
+
     <!-- Vorteile -->
     <section class="advantages-section">
       <div class="advantages-content">
@@ -140,16 +165,6 @@
           <li>Sicherer Zugang über PC, Tablet oder Smartphone</li>
           <li>Mehr Selbstständigkeit im digitalen Alltag</li>
         </ul>
-      </div>
-    </section>
-
-    <!-- Testimonial -->
-    <section class="testimonial-section">
-      <div class="testimonial-card">
-        <p class="testimonial-text">
-          „Jetzt kann ich endlich alleine das Internet nutzen.“
-        </p>
-        <p class="testimonial-author">- Traudi (86 Jahre)</p>
       </div>
     </section>
 
@@ -225,6 +240,16 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      showMore: false,
+    };
+  },
+};
+</script>
+
 <style scoped>
 .startseite {
   font-family: "Inter", sans-serif;
@@ -245,6 +270,23 @@
   flex-direction: column-reverse;
   align-items: center;
   gap: 3rem;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 165, 0, 0.1); /* sehr leichtes Orange */
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2; /* darüber damit Text klickbar bleibt */
 }
 
 @media (min-width: 1024px) {
@@ -332,9 +374,31 @@
 
 /* Welcome */
 .welcome-section {
-  background: #f9f6fb;
+  background: linear-gradient(
+    135deg,
+    rgba(249, 246, 251, 0.6),
+    rgba(255, 255, 255, 0.3)
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
   padding: 60px 40px;
   text-align: left;
+}
+
+.mehr-lesen-button {
+  background: none;
+  border: none;
+  color: #723381;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 0;
+  font-size: 16px;
+}
+.mehr-lesen-button:hover {
+  text-decoration: underline;
 }
 
 .welcome-text {
@@ -353,7 +417,7 @@
 
 /* Features */
 .features-modern {
-  background: #fbe3ca;
+  background: linear-gradient(135deg, #eab377 0%, #fedeba 50%, #eab377 100%);
   padding: 60px 20px;
   text-align: center;
 }
@@ -373,21 +437,42 @@
   }
 }
 
+.feature-item:hover {
+  background: linear-gradient(145deg, #fff9f0, #f0e3d6);
+  box-shadow: 0 4px 20px rgba(234, 179, 119, 0.2);
+  border-radius: 16px;
+  padding: 30px 20px;
+  transition: box-shadow 0.3s ease;
+}
+
 .feature-item {
-  position: relative;
-  background: transparent;
-  text-align: center;
-  flex: 1;
+  border-radius: 16px;
+  padding: 30px 20px;
+  transition: box-shadow 0.3s ease;
 }
 
 .feature-icon-circle {
-  background: white;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.25
+  ); /* halbtransparentes Weiß für Glaslook */
+  backdrop-filter: blur(8px); /* Glas-Effekt durch Blur */
+  -webkit-backdrop-filter: blur(8px);
   border-radius: 50%;
   padding: 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3); /* leichter weißer Schatten */
+  transition: box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.4); /* feiner weißer Rand für mehr Tiefe */
+}
+
+.feature-item:hover .feature-icon-circle {
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5); /* stärkerer weißer Schein beim Hover */
 }
 
 .feature-icon-circle i {
@@ -430,6 +515,17 @@
   object-fit: cover; /* falls die Höhe unterschiedlich wäre */
 }
 
+.photo-gallery img {
+  filter: brightness(0.95);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.photo-gallery img:hover {
+  filter: brightness(1);
+  transform: scale(1.03);
+}
+
 /* Testimonial */
 .testimonial-section {
   background: #f9f6fb;
@@ -468,7 +564,7 @@
 }
 
 details {
-  background: #f9f9f9;
+  background: #f9f6fb;
   padding: 15px;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -516,7 +612,7 @@ details p {
 
 /* Vorteile */
 .advantages-section {
-  background: #fbe3ca;
+  background: linear-gradient(135deg, #eab377 0%, #fedeba 50%);
   padding: 60px 20px;
   text-align: center;
 }
@@ -543,5 +639,16 @@ details p {
   margin: 10px 0;
   position: relative;
   padding-left: 25px;
+}
+
+.hero-section,
+.welcome-section,
+.features-modern,
+.why-caredigi-section,
+.photo-gallery,
+.testimonial-section,
+.advantages-section,
+.faq-section {
+  margin-bottom: 100px; /* oder eine andere Zahl je nach Wunsch */
 }
 </style>

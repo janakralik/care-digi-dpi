@@ -2,6 +2,12 @@
   <div class="background-wrapper">
     <div class="kontakte">
       <h2 class="section-title">Meine Ansprechpartner</h2>
+      <p class="einleitungstext">
+        Wenn du Unterstützung brauchst oder einfach jemanden anrufen möchtest,
+        bist du hier richtig. Ob Familie, Nachbarn, Pflegedienst oder
+        Notfallkontakt – mit einem Knopfdruck kannst du die Personen erreichen,
+        die dir wichtig sind.
+      </p>
 
       <div
         v-for="(kontakt, index) in kontakte"
@@ -63,14 +69,29 @@ export default {
 }
 
 .kontakt-card {
-  background: #fff;
+  background: white;
   display: flex;
   align-items: center;
   padding: 15px;
   margin: 10px 0;
-  border: 1px solid #efd1b0;
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  border: 3px solid #e1b47a; /* oranger Rahmen */
+  border-radius: 20px; /* wie bei Ausflügen */
+  box-shadow: 0px 0px 10px #ccc; /* wie bei Ausflügen */
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.kontakt-card:hover {
+  transform: scale(1.05);
+}
+
+.einleitungstext {
+  font-size: 18px;
+  color: #4f4f4f;
+  margin-bottom: 70px;
+  margin-left: 10px;
+  margin-right: 10px;
+  line-height: 1.6;
 }
 
 .kontakt-foto {
