@@ -65,14 +65,13 @@ export default {
 }
 
 .section-title {
-  background-color: #6d3a8c;
+  background-color: #9353a4;
   color: white;
   padding: 10px;
   display: inline-block;
   border-radius: 20px;
   font-size: 22px;
   margin: 0 0 20px 0;
-  border-top: 5px solid #6d3a8c;
 }
 
 .links-grid {

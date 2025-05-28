@@ -155,7 +155,7 @@ export default {
 }
 
 .section-title {
-  background-color: #6d3a8c;
+  background-color: #9353a4;
   color: white;
   padding: 10px;
   display: inline-block;

@@ -5,24 +5,18 @@
     <!-- Einleitungstext -->
     <div class="einleitung">
       <h2>Was möchtest du heute machen?</h2>
-      <p>
-        Schön, dass du da bist! Dieses Dashboard hilft dir dabei, deinen Tag
-        ganz einfach im Blick zu behalten. Du siehst auf einen Blick, welcher
-        Wochentag heute ist, und findest alle wichtigen Termine, Erinnerungen
-        und Aufgaben an einem Ort.
-      </p>
       <ul class="einleitungsliste">
         <li>
           <a href="#erinnerungen">📝 Erinnerungen</a> – Behalte deine Aufgaben
           im Überblick und hake sie einfach ab.
         </li>
         <li>
-          <a href="#links">🌐 Wichtige Seiten</a> – Direktzugriff auf deine
-          wichtigsten Online-Dienste.
-        </li>
-        <li>
           <a href="#kontakte">📞 Ansprechpartner</a> – Ruf schnell wichtige
           Personen an, wenn du Hilfe brauchst.
+        </li>
+        <li>
+          <a href="#links">🌐 Wichtige Seiten</a> – Direktzugriff auf deine
+          wichtigsten Online-Dienste.
         </li>
         <li>
           <a href="#ausfluege">🌸 Ausflüge</a> – Finde Ausflüge in deiner Nähe.
@@ -67,14 +61,15 @@ export default {
 <style scoped>
 .dashboard-wrapper {
   background-color: #ffffff;
-  padding: 20px;
+  padding: 30px;
   border-radius: 20px;
 }
 
 .einleitung {
-  margin-bottom: 60px; /* Mehr Abstand nach unten */
-  padding-left: 20px;
+  margin-bottom: 60px;
+  padding: 20px;
   align: center;
+  background-color: #fefaf7;
 }
 
 .einleitung h2 {

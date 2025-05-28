@@ -1,13 +1,18 @@
 <template>
-  <div class="greeting-container">
-    <div class="greeting-box"></div>
-    <div class="greeting-text">
-      <span>Guten Morgen Hilde! Heute ist </span>
-      <span class="highlight">{{ aktuellesDatum }}</span>
+  <div class="gruss-card">
+    <div class="gruss-left">
+      <img src="@/assets/WetterIcon.png" alt="Wetter" class="wetter-icon" />
+      <div class="temperatur">14°C</div>
     </div>
-    <div class="temperature">14 °C</div>
-    <div class="weather-icon">
-      <img src="@/assets/WetterIcon.png" alt="Logo" class="logo" />
+    <div class="gruss-right">
+      <div class="gruss-text">
+        <span class="greeting">
+          Guten Morgen, <strong class="highlight">Hilde</strong>
+        </span>
+        <span class="datum-text">
+          Heute ist der <strong class="highlight">{{ aktuellesDatum }}</strong>
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -54,63 +59,67 @@ export default {
 };
 </script>
 
-<style>
-.greeting-container {
-  position: relative;
-  width: 100%;
-  height: 250px;
-  top: -70px;
+<style scoped>
+.gruss-card {
   display: flex;
-  justify-content: center;
   align-items: center;
-  z-index: 1;
-}
-
-.greeting-box {
-  width: 1296px;
-  height: 212px;
-  background: #fafafa;
+  justify-content: space-between;
+  background: #9353a4;
   border-radius: 20px;
-  border: 1px #eab377 solid;
-  position: absolute;
-  z-index: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 30px 40px;
+  max-width: 1200px;
+  margin: 0 auto 50px auto;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.greeting-text {
+.gruss-left {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  z-index: 1;
-  text-align: center;
-  color: #4f4f4f;
+  gap: 20px;
 }
 
-.greeting-text span {
+.wetter-icon {
+  width: 80px;
+  height: 80px;
+}
+
+.temperatur {
+  font-size: 32px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.gruss-right {
+  flex: 1;
+}
+
+.gruss-text {
+  text-align: left;
+}
+
+.greeting {
+  display: block;
   font-size: 28px;
-  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.greeting .highlight {
   font-weight: 700;
-  word-wrap: break-word;
+  color: #ffffff;
 }
 
-.greeting-text .highlight {
-  color: #eab377;
+.datum-text {
+  font-size: 20px;
+  color: #ffffff;
+  margin-top: 6px;
+  display: inline-block;
 }
 
-.temperature {
-  position: absolute;
-  left: 279px;
-  top: 126px;
-  font-size: 35px;
+.datum-text .highlight {
   font-weight: 700;
-  color: rgba(27, 31, 38, 0.72);
-}
-
-.weather-icon {
-  position: absolute;
-  left: 134px;
-  top: 31px;
-  width: 132px;
-  height: 132px;
+  color: #ffffff;
 }
 </style>

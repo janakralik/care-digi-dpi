@@ -42,27 +42,30 @@
 
 <style>
 .header {
-  position: relative;
+  position: fixed; /* <- macht den Header immer sichtbar */
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 130px;
+  height: 100px;
   background: linear-gradient(to right, #eab377 0%, #fedeba 50%, #eab377 100%);
-
-  z-index: 0;
+  z-index: 1000; /* <- ganz oben */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Korrekte Klassenzuweisung und kleinere Größe */
+/* Logo */
 .logo {
   position: absolute;
   top: 0px;
   left: 30px;
   width: 150px;
   height: auto;
-  cursor: pointer; /* Zeigt Hand-Cursor an, wenn man mit der Maus drüberfährt */
+  cursor: pointer;
 }
 
+/* Navigation */
 nav {
   position: absolute;
-  top: 50px;
+  top: 40px;
   right: 30px;
   display: flex;
   justify-content: center;
@@ -82,6 +85,11 @@ nav {
   color: #252525;
   cursor: pointer;
   text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-item:hover {
+  color: #ffffff;
 }
 
 .nav-item.secondary {

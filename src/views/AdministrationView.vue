@@ -73,9 +73,9 @@ p {
 .einleitung {
   margin-top: 80px;
   margin-bottom: 80px;
-  padding-left: 20px;
+  padding: 20px;
   align: center;
-  color: #4f4f4f;
+  background-color: #fefaf7;
 }
 
 .einleitung h2 {

@@ -1,7 +1,9 @@
 <template>
   <div class="app">
     <HeaderComponent />
-    <router-view />
+    <main class="main-content">
+      <router-view />
+    </main>
     <FooterComponent />
   </div>
 </template>
@@ -21,5 +23,17 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html,
+body,
+.app {
+  height: 100%;
+  background-color: #fff;
+}
+
+/* Abstand zum fixierten Header */
+.main-content {
+  margin-top: 100px; /* exakt wie Höhe im Header */
 }
 </style>

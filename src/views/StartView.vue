@@ -27,7 +27,7 @@
     <section class="welcome-section">
       <div class="welcome-text">
         <h1 class="welcome-heading">
-          Willkommen bei CAREdigi: Ihre digitale Unterstützung
+          Willkommen bei CAREdigi: Deine digitale Unterstützung
         </h1>
         <p>
           CAREdigi ist eine speziell für Seniorinnen entwickelte Webanwendung,
@@ -76,50 +76,48 @@
 
     <!-- Features -->
     <section class="features-modern">
-      <div class="features-grid">
-        <!-- Feature 1 -->
-        <div class="feature-item">
-          <div class="feature-icon-circle">
-            <i class="fas fa-calendar-alt"></i>
+      <div class="features-content">
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-icon-circle">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h3>Erinnerungen</h3>
+            <p>
+              Für Medikamente, Arztbesuche und wichtige Alltagsaufgaben –
+              zuverlässig, rechtzeitig, einfach.
+            </p>
           </div>
-          <h3>Erinnerungen</h3>
-          <p class="feature-description">
-            Mit CAREdigi erhalten Seniorinnen hilfreiche Erinnerungen für
-            wichtige Aufgaben und Termine – zum Beispiel Arztbesuche, die
-            Einnahme von Medikamenten oder Alltagserledigungen. Angehörige legen
-            diese Erinnerungen an, damit alles Wichtige rechtzeitig angezeigt
-            wird – ganz ohne zusätzlichen Aufwand für die Seniorinnen.
-          </p>
-        </div>
 
-        <!-- Feature 2 -->
-        <div class="feature-item">
-          <div class="feature-icon-circle">
-            <i class="fas fa-phone"></i>
+          <div class="feature-item">
+            <div class="feature-icon-circle">
+              <i class="fas fa-user-friends"></i>
+            </div>
+            <h3>Kontaktpersonen</h3>
+            <p>
+              Familienmitglieder, Freunde oder Ärzt*innen – immer übersichtlich
+              und griffbereit hinterlegt.
+            </p>
           </div>
-          <h3>Kontaktpersonen</h3>
-          <p class="feature-description">
-            In CAREdigi können die wichtigsten Kontaktpersonen wie
-            Familienmitglieder, Freunde oder Ärzte hinterlegt werden. So haben
-            Senior*innen jederzeit schnellen Zugriff auf alle wichtigen
-            Telefonnummern und Kontaktdaten – übersichtlich, sicher und einfach
-            abrufbar.
-          </p>
-        </div>
 
-        <!-- Feature 3 -->
-        <div class="feature-item">
-          <div class="feature-icon-circle">
-            <i class="fas fa-link"></i>
+          <div class="feature-item">
+            <div class="feature-icon-circle">
+              <i class="fas fa-link"></i>
+            </div>
+            <h3>Wichtige Links</h3>
+            <p>
+              Direktzugriff auf Apotheken, Hausärzte oder Behörden – sicher und
+              leicht auffindbar.
+            </p>
           </div>
-          <h3>Links zu externen Seiten</h3>
-          <p class="feature-description">
-            Ob Apotheke, Hausarztpraxis oder wichtige Informationsseiten –
-            CAREdigi ermöglicht den direkten Zugriff auf vertrauenswürdige
-            Links. Angehörige hinterlegen die passenden Webseiten, sodass
-            Senior*innen sie leicht finden und sicher nutzen können, ohne lange
-            suchen zu müssen.
-          </p>
+
+          <div class="feature-item">
+            <div class="feature-icon-circle">
+              <i class="fas fa-tree"></i>
+            </div>
+            <h3>Ausflüge</h3>
+            <p>Finde Ausflüge in deiner Nähe.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -144,6 +142,46 @@
       <img src="@/assets/Startseite3.png" alt="Foto 3" />
     </section>
 
+    <!-- Vorteile -->
+    <section class="vorteile-section">
+      <div class="vorteile-content">
+        <h2>Vorteile mit CAREdigi</h2>
+        <div class="vorteile-grid">
+          <div class="vorteil-item">
+            <div class="vorteil-icon-circle">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Einfache Nutzung</h3>
+            <p>Ohne technisches Vorwissen sofort einsatzbereit.</p>
+          </div>
+
+          <div class="vorteil-item">
+            <div class="vorteil-icon-circle">
+              <i class="fas fa-user-friends"></i>
+            </div>
+            <h3>Persönliche Betreuung</h3>
+            <p>Betreuung und Pflege der Inhalte durch Angehörige.</p>
+          </div>
+
+          <div class="vorteil-item">
+            <div class="vorteil-icon-circle">
+              <i class="fas fa-laptop"></i>
+            </div>
+            <h3>Geräteunabhängig</h3>
+            <p>Funktioniert auf PC, Tablet oder Smartphone.</p>
+          </div>
+
+          <div class="vorteil-item">
+            <div class="vorteil-icon-circle">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3>Mehr Selbstständigkeit</h3>
+            <p>Mehr Sicherheit und Vertrauen im digitalen Alltag.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Testimonial -->
     <section class="testimonial-section">
       <div class="testimonial-card">
@@ -152,90 +190,6 @@
         </p>
         <p class="testimonial-author">- Traudi (86 Jahre)</p>
       </div>
-    </section>
-
-    <!-- Vorteile -->
-    <section class="advantages-section">
-      <div class="advantages-content">
-        <h2>Ihre Vorteile mit CAREdigi</h2>
-        <ul>
-          <li>Einfache Nutzung ohne technisches Vorwissen</li>
-          <li>Persönliche Betreuung durch Angehörige</li>
-          <li>Alles Wichtige auf einen Blick</li>
-          <li>Sicherer Zugang über PC, Tablet oder Smartphone</li>
-          <li>Mehr Selbstständigkeit im digitalen Alltag</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq-section">
-      <h2>Häufige Fragen</h2>
-
-      <details>
-        <summary>Wie funktioniert das Erstellen von Erinnerungen?</summary>
-        <p>
-          Die Angehörigen erstellen über die Administrationsseite Erinnerungen,
-          die automatisch auf dem Dashboard der Senior*innen angezeigt werden.
-        </p>
-      </details>
-
-      <details>
-        <summary>Wer kann meine CAREdigi-Seite verwalten?</summary>
-        <p>
-          Die Verwaltung übernehmen ausschließlich Ihre vertrauten Angehörigen.
-          Sie richten Erinnerungen, Links und Kontakte für Sie ein.
-        </p>
-      </details>
-
-      <details>
-        <summary>Muss ich selbst Einstellungen vornehmen?</summary>
-        <p>
-          Nein, Sie müssen nichts selbst einstellen. Alle Inhalte werden von
-          Ihren Angehörigen gepflegt, sodass Sie einfach alles Wichtige auf
-          einen Blick sehen.
-        </p>
-      </details>
-
-      <details>
-        <summary>Was passiert mit meinen Daten?</summary>
-        <p>
-          Ihre Daten werden sicher gespeichert und ausschließlich für die
-          Funktionen von CAREdigi verwendet. Es erfolgt keine Weitergabe an
-          Dritte.
-        </p>
-      </details>
-
-      <details>
-        <summary>
-          Kann ich CAREdigi auf meinem Smartphone oder Tablet nutzen?
-        </summary>
-        <p>
-          Ja, CAREdigi funktioniert auf allen gängigen Geräten wie PC, Tablet
-          oder Smartphone – ohne zusätzliche Apps oder spezielle Hardware.
-        </p>
-      </details>
-
-      <details>
-        <summary>
-          Welche Informationen werden auf meinem Dashboard angezeigt?
-        </summary>
-        <p>
-          Sie sehen Ihre aktuellen Erinnerungen, wichtige Kontakte und nützliche
-          Links – alles übersichtlich und einfach zugänglich an einem Ort.
-        </p>
-      </details>
-
-      <details>
-        <summary>
-          Was passiert, wenn sich etwas ändert (z.B. neue Termine)?
-        </summary>
-        <p>
-          Ihre Angehörigen können jederzeit Änderungen oder neue Informationen
-          einpflegen. Ihr Dashboard wird automatisch aktualisiert, ohne dass Sie
-          etwas tun müssen.
-        </p>
-      </details>
     </section>
   </div>
 </template>
@@ -349,7 +303,7 @@ export default {
 }
 
 .senioren-dashboard-button:hover {
-  background-color: #d49b6a;
+  text-decoration: underline;
 }
 
 .administration-button {
@@ -359,7 +313,7 @@ export default {
 }
 
 .administration-button:hover {
-  background-color: #fff7ed;
+  text-decoration: underline;
 }
 
 /* Hero-Bild */
@@ -385,6 +339,7 @@ export default {
 
   padding: 60px 40px;
   text-align: left;
+  margin-bottom: 20px;
 }
 
 .mehr-lesen-button {
@@ -409,25 +364,35 @@ export default {
 }
 
 .welcome-heading {
-  color: #723381;
+  color: #fffff;
   margin-bottom: 20px;
   font-size: 36px;
   font-weight: 700;
+  padding-bottom: 20px;
 }
 
 /* Features */
 .features-modern {
-  background: linear-gradient(135deg, #eab377 0%, #fedeba 50%, #eab377 100%);
+  background: white;
   padding: 60px 20px;
   text-align: center;
+}
+
+.features-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.features-content h2 {
+  font-size: 32px;
+  color: #723381;
+  margin-bottom: 40px;
 }
 
 .features-grid {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
@@ -437,67 +402,48 @@ export default {
   }
 }
 
-.feature-item:hover {
-  background: linear-gradient(145deg, #fff9f0, #f0e3d6);
-  box-shadow: 0 4px 20px rgba(234, 179, 119, 0.2);
+.feature-item {
+  flex: 1 1 200px;
+  max-width: 260px;
+  margin: 0 auto;
+  padding: 20px;
   border-radius: 16px;
-  padding: 30px 20px;
-  transition: box-shadow 0.3s ease;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
 }
 
-.feature-item {
-  border-radius: 16px;
-  padding: 30px 20px;
-  transition: box-shadow 0.3s ease;
+.feature-item:hover {
+  transform: translateY(-4px);
 }
 
 .feature-icon-circle {
-  background: rgba(
-    255,
-    255,
-    255,
-    0.25
-  ); /* halbtransparentes Weiß für Glaslook */
-  backdrop-filter: blur(8px); /* Glas-Effekt durch Blur */
-  -webkit-backdrop-filter: blur(8px);
+  background: #f9f6fb;
+  border: 2px solid #723381;
   border-radius: 50%;
-  padding: 20px;
+  width: 72px;
+  height: 72px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3); /* leichter weißer Schatten */
-  transition: box-shadow 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.4); /* feiner weißer Rand für mehr Tiefe */
-}
-
-.feature-item:hover .feature-icon-circle {
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5); /* stärkerer weißer Schein beim Hover */
+  margin-bottom: 16px;
 }
 
 .feature-icon-circle i {
-  font-size: 32px;
+  font-size: 28px;
   color: #723381;
 }
 
 .feature-item h3 {
-  font-size: 20px;
-  color: #000000;
+  font-size: 18px;
   margin-bottom: 10px;
+  color: #333;
 }
 
-.feature-description {
-  opacity: 0;
-  height: 0;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  color: black;
-  font-size: 16px;
-}
-
-.feature-item:hover .feature-description {
-  opacity: 1;
-  height: auto;
+.feature-item p {
+  font-size: 14px;
+  color: #555;
+  padding-bottom: 10px;
 }
 
 /* Fotos */
@@ -505,7 +451,7 @@ export default {
   display: flex;
   justify-content: space-between;
   gap: 0; /* <-- Abstand komplett entfernt */
-  margin: 40px 0;
+  margin: 100px 0;
 }
 
 .photo-gallery img {
@@ -519,11 +465,6 @@ export default {
   filter: brightness(0.95);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.photo-gallery img:hover {
-  filter: brightness(1);
-  transform: scale(1.03);
 }
 
 /* Testimonial */
@@ -588,9 +529,10 @@ details p {
 
 /* Warum CAREdigi */
 .why-caredigi-section {
-  background: #f9f6fb;
+  background: #fff5ea;
   padding: 60px 20px;
   text-align: center;
+  margin-bottom: 100px;
 }
 
 .why-caredigi-content {
@@ -601,7 +543,8 @@ details p {
 .why-caredigi-content h2 {
   font-size: 32px;
   margin-bottom: 20px;
-  color: #723381;
+  color: #000000;
+  padding-bottom: 20px;
 }
 
 .why-caredigi-content p {
@@ -610,45 +553,90 @@ details p {
   line-height: 1.6;
 }
 
-/* Vorteile */
-.advantages-section {
-  background: linear-gradient(135deg, #eab377 0%, #fedeba 50%);
+.vorteile-section {
+  background: white;
   padding: 60px 20px;
   text-align: center;
+  margin-bottom: 60px;
 }
 
-.advantages-content {
-  max-width: 800px;
+.vorteile-content {
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-.advantages-content h2 {
-  color: #723381;
+.vorteile-content h2 {
   font-size: 32px;
-  margin-bottom: 20px;
+  color: #000000;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
 }
 
-.advantages-content ul {
-  list-style: none;
-  padding: 0;
+.vorteile-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.advantages-content li {
+@media (min-width: 768px) {
+  .vorteile-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.vorteil-item {
+  flex: 1 1 200px;
+  max-width: 220px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.vorteil-item:hover {
+  transform: translateY(-4px);
+}
+
+.vorteil-icon-circle {
+  background: #f9f6fb;
+  border: 2px solid #723381;
+  color: #723381;
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.vorteil-icon-circle i {
+  font-size: 28px;
+  color: #723381;
+}
+
+.vorteil-item h3 {
   font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.vorteil-item p {
+  font-size: 14px;
   color: #555;
-  margin: 10px 0;
-  position: relative;
-  padding-left: 25px;
 }
 
 .hero-section,
-.welcome-section,
 .features-modern,
 .why-caredigi-section,
 .photo-gallery,
 .testimonial-section,
 .advantages-section,
 .faq-section {
-  margin-bottom: 100px; /* oder eine andere Zahl je nach Wunsch */
+  margin-bottom: 150px;
 }
 </style>

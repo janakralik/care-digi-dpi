@@ -6,7 +6,7 @@
         Unter „Ausflüge“ findest du Vorschläge für schöne Unternehmungen in
         deiner Nähe. Vielleicht ein Spaziergang im Park, ein Besuch im Museum
         oder ein Ausflug mit der Gruppe? Hier kannst du stöbern und dich
-        inspirieren lassen, mal wieder etwas Schönes zu unternehmen.w
+        inspirieren lassen, mal wieder etwas Schönes zu unternehmen.
       </p>
 
       <div class="ausflug-grid">
@@ -24,7 +24,14 @@
           <div class="ausflug-beschreibung">
             <p>{{ ausflug.beschreibung }}</p>
           </div>
-          <button class="hilfe-button">Mehr Infos</button>
+          <a
+            :href="ausflug.link"
+            target="_blank"
+            rel="noopener"
+            class="hilfe-button"
+          >
+            Mehr Infos
+          </a>
         </div>
       </div>
     </div>
@@ -40,29 +47,34 @@ export default {
           name: "Spaziergang im Stadtpark",
           beschreibung:
             "Ein ruhiger Spaziergang durch grüne Alleen und blühende Beete.",
-          bild: "https://upload.wikimedia.org/wikipedia/commons/6/6b/City_Park_in_Summer_-_Panorama_-_München_-_Bavaria_-_Germany_-_DSC03568.JPG",
+          bild: require("@/assets/Ausfluege_Park.jpg"),
+          link: "https://www.linz.at/umwelt/35286.php",
         },
         {
           name: "Besuch im Heimatmuseum",
           beschreibung: "Erkunde lokale Geschichte mit barrierefreiem Zugang.",
-          bild: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Museum_of_History_Moscow_02-2017_img3.jpg",
+          bild: require("@/assets/Ausfluege_Museum.jpg"),
+          link: "https://www.oberoesterreich.at/oesterreich-poi/detail/400186/heimatmuseum.html",
         },
         {
           name: "Ausflug an den See",
           beschreibung:
             "Genieße frische Luft und eine schöne Aussicht am Wasser.",
-          bild: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Scharm%C3%BCtzelsee_07-2014_img11.jpg",
+          bild: require("@/assets/Ausfluege_See.jpg"),
+          link: "https://www.ausflugstipps.at/am-see.html",
         },
         {
           name: "Kaffee und Kuchen im Gartenlokal",
           beschreibung: "Gemütliches Beisammensitzen in schöner Atmosphäre.",
-          bild: "https://upload.wikimedia.org/wikipedia/commons/2/22/Teehaus_Tiergarten_Sch%C3%B6nbrunn_2017-05-05_09-44-34.jpg",
+          bild: require("@/assets/Ausfluege_Kuchen.jpg"),
+          link: "https://www.cafe-kowalski.at/standorte-speisekarten/gallneukirchen",
         },
         {
           name: "Kleine Waldwanderung",
           beschreibung:
             "Ein kurzer, flacher Rundweg durch den nahegelegenen Wald.",
-          bild: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Waldweg_im_Harz_2017-09-14_img2.jpg",
+          bild: require("@/assets/Ausfluege_Wald.jpg"),
+          link: "https://www.oberoesterreich.at/wandern/die-schoensten-rundwanderwege.html",
         },
       ],
     };
@@ -80,14 +92,13 @@ export default {
 }
 
 .section-title {
-  background-color: #6d3a8c;
+  background-color: #9353a4;
   color: white;
   padding: 10px;
   display: inline-block;
   border-radius: 20px;
   font-size: 22px;
   margin: 0 0 20px 0;
-  border-top: 5px solid #6d3a8c;
 }
 
 .einleitungstext {
@@ -113,7 +124,7 @@ export default {
   padding: 20px 20px 30px 20px;
   border-radius: 20px;
   box-shadow: 0px 0px 10px #ccc;
-  border: 3px solid #e1b47a; /* oranger Rahmen */
+  border: 3px solid #e1b47a;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -152,5 +163,13 @@ export default {
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s;
+}
+
+.hilfe-button:hover {
+  background-color: #d39e60;
 }
 </style>
