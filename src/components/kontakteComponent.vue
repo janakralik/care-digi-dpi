@@ -54,7 +54,7 @@ export default {
   padding: 20px;
   border-radius: 20px;
   margin-bottom: 20px;
-  box-shadow: 0px 0px 10px #ccc;
+  box-shadow: 0px 0px 2px #ccc;
 }
 
 .section-title {

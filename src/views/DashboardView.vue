@@ -1,6 +1,12 @@
 <template>
   <div class="dashboard-wrapper">
-    <grussComponent />
+    <!-- Hero-Bild über die gesamte Breite -->
+    <div class="hero-image"></div>
+
+    <!-- Gruss-Komponente -->
+    <div class="gruss-container">
+      <grussComponent />
+    </div>
 
     <!-- Einleitungstext -->
     <div class="einleitung">
@@ -61,26 +67,37 @@ export default {
 <style scoped>
 .dashboard-wrapper {
   background-color: #ffffff;
-  padding: 30px;
-  border-radius: 20px;
 }
 
+/* HERO-BILD OBEN */
+.hero-image {
+  width: 100%;
+  height: 400px;
+  background: url("@/assets/field.jpg") center center / cover no-repeat;
+}
+
+/* GRUSS-KOMPONENTE */
+.gruss-container {
+  max-width: 1200px;
+  margin: -60px auto 60px auto; /* überlappt leicht mit Hero */
+  padding: 0 20px;
+  z-index: 2;
+  position: relative;
+}
+
+/* EINLEITUNG */
 .einleitung {
-  margin-bottom: 60px;
+  margin: 0 auto 60px auto;
   padding: 20px;
-  align: center;
-  background-color: #fefaf7;
+  background-color: #ffffff;
+  border-radius: 25px;
+  box-shadow: 0px 0px 10px #ccc;
+  max-width: 1000px;
 }
 
 .einleitung h2 {
   color: #4f4f4f;
   margin-bottom: 10px;
-}
-
-.einleitung p {
-  color: #4f4f4f;
-  margin-bottom: 10px;
-  font-size: 18px;
 }
 
 .einleitungsliste {
@@ -90,7 +107,7 @@ export default {
 }
 
 .einleitungsliste li {
-  margin-bottom: 15px; /* Etwas mehr Abstand zwischen den Listenelementen */
+  margin-bottom: 15px;
   font-size: 18px;
   color: #4f4f4f;
 }
@@ -105,12 +122,12 @@ export default {
   text-decoration: underline;
 }
 
-/* Mehr Abstand zwischen den Komponenten */
+/* ABSTAND ZWISCHEN KOMPONENTEN */
 #erinnerungen,
 #kontakte,
 #links,
 #ausfluege {
-  margin-bottom: 90px; /* Abstand zwischen den Komponenten */
+  margin-bottom: 90px;
 }
 
 #erinnerungen {

@@ -1,16 +1,21 @@
 <template>
   <div class="gruss-card">
+    <!-- Linke Seite: Wetter -->
     <div class="gruss-left">
-      <img src="@/assets/WetterIcon.png" alt="Wetter" class="wetter-icon" />
-      <div class="temperatur">14°C</div>
+      <img :src="wetterBild" alt="Wetter" class="wetter-icon" />
+      <div class="temperatur">
+        {{ temperatur !== null ? temperatur + "°C" : "–°C" }}
+      </div>
     </div>
+
+    <!-- Rechte Seite: Text -->
     <div class="gruss-right">
       <div class="gruss-text">
         <span class="greeting">
-          Guten Morgen, <strong class="highlight">Hilde</strong>
+          Guten Tag, <strong class="highlight">Hilde</strong>
         </span>
         <span class="datum-text">
-          Heute ist der <strong class="highlight">{{ aktuellesDatum }}</strong>
+          Heute ist <strong class="highlight">{{ aktuellesDatum }}</strong>
         </span>
       </div>
     </div>
@@ -22,39 +27,85 @@ export default {
   data() {
     return {
       aktuellesDatum: "",
+      temperatur: null,
+      wetterBild: require("@/assets/sun.png"), // Fallback
     };
   },
   mounted() {
-    const heute = new Date();
-    const wochentage = [
-      "Sonntag",
-      "Montag",
-      "Dienstag",
-      "Mittwoch",
-      "Donnerstag",
-      "Freitag",
-      "Samstag",
-    ];
-    const monate = [
-      "Januar",
-      "Februar",
-      "März",
-      "April",
-      "Mai",
-      "Juni",
-      "Juli",
-      "August",
-      "September",
-      "Oktober",
-      "November",
-      "Dezember",
-    ];
+    this.setzeDatum();
+    this.holeWetter();
+  },
+  methods: {
+    setzeDatum() {
+      const heute = new Date();
+      const wochentage = [
+        "Sonntag",
+        "Montag",
+        "Dienstag",
+        "Mittwoch",
+        "Donnerstag",
+        "Freitag",
+        "Samstag",
+      ];
+      const monate = [
+        "Januar",
+        "Februar",
+        "März",
+        "April",
+        "Mai",
+        "Juni",
+        "Juli",
+        "August",
+        "September",
+        "Oktober",
+        "November",
+        "Dezember",
+      ];
+      const wochentag = wochentage[heute.getDay()];
+      const tag = heute.getDate();
+      const monat = monate[heute.getMonth()];
+      this.aktuellesDatum = `${wochentag}, der ${tag}. ${monat}.`;
+    },
 
-    const wochentag = wochentage[heute.getDay()];
-    const tag = heute.getDate();
-    const monat = monate[heute.getMonth()];
+    async holeWetter() {
+      const username = "fhoberoesterreich_kralik_jana";
+      const password = "3Axr77OEGe";
+      const encoded = btoa(`${username}:${password}`);
 
-    this.aktuellesDatum = `${wochentag}, der ${tag}. ${monat}.`;
+      const isoDate = new Date().toISOString().split(".")[0] + "Z";
+      const url = `https://api.meteomatics.com/${isoDate}/t_2m:C,weather_symbol_1h:idx/48.3069,14.2858/json`;
+
+      try {
+        const res = await fetch(url, {
+          headers: {
+            Authorization: `Basic ${encoded}`,
+          },
+        });
+
+        const data = await res.json();
+        const temp = data.data.find((d) => d.parameter === "t_2m:C")
+          .coordinates[0].dates[0].value;
+        const symbol = data.data.find(
+          (d) => d.parameter === "weather_symbol_1h:idx"
+        ).coordinates[0].dates[0].value;
+
+        this.temperatur = Math.round(temp);
+
+        // Wetterbild anhand des Symbols auswählen
+        if (symbol === 1) {
+          this.wetterBild = require("@/assets/sun.png");
+        } else if ([2, 3].includes(symbol)) {
+          this.wetterBild = require("@/assets/sun-clouds.png");
+        } else if ([4, 5].includes(symbol)) {
+          this.wetterBild = require("@/assets/clouds.png");
+        } else {
+          this.wetterBild = require("@/assets/rain.png");
+        }
+      } catch (error) {
+        console.error("Fehler beim Wetterabruf:", error);
+        this.temperatur = null;
+      }
+    },
   },
 };
 </script>
@@ -62,22 +113,29 @@ export default {
 <style scoped>
 .gruss-card {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #9353a4;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  padding: 30px 40px;
-  max-width: 1200px;
+  max-height: 100px;
   margin: 0 auto 50px auto;
-  gap: 20px;
-  flex-wrap: wrap;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
+/* Beide Hälften direkt nebeneinander */
 .gruss-left {
+  background: #723381;
+  padding: 30px 40px;
   display: flex;
   align-items: center;
   gap: 20px;
+  min-width: 280px;
+}
+
+.gruss-right {
+  background: #9353a4;
+  flex: 1;
+  padding: 30px 40px;
+  display: flex;
+  align-items: center;
 }
 
 .wetter-icon {
@@ -89,14 +147,6 @@ export default {
   font-size: 32px;
   font-weight: 600;
   color: #ffffff;
-}
-
-.gruss-right {
-  flex: 1;
-}
-
-.gruss-text {
-  text-align: left;
 }
 
 .greeting {
