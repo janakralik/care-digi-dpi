@@ -2,13 +2,6 @@
   <div class="background-wrapper">
     <div class="links">
       <h2 class="section-title">Meine wichtigsten Seiten</h2>
-      <p class="einleitungstext">
-        Hier findest du direkte Links zu den Internetseiten, die du regelmäßig
-        brauchst – zum Beispiel für Gesundheit, Behörden oder Informationen. Du
-        musst nicht lange suchen oder tippen, sondern kommst mit einem Klick
-        dorthin, wo du hinmöchtest.
-      </p>
-
       <div class="links-grid">
         <a
           v-for="(link, index) in links"
@@ -20,11 +13,25 @@
         >
           <img :src="link.icon" alt="Icon" class="link-icon" />
           <div class="link-name">{{ link.name }}</div>
-          <div class="link-details">
-            <p>{{ link.beschreibung }}</p>
-          </div>
-          <button class="hilfe-button">HILFE</button>
+          <button class="hilfe-button" @click.stop.prevent="zeigeHilfe(link)">
+            HILFE
+          </button>
         </a>
+      </div>
+    </div>
+
+    <!-- Hilfe PopUp -->
+    <div
+      v-if="aktiveHilfe"
+      class="modal-overlay"
+      @click.self="aktiveHilfe = null"
+    >
+      <div class="modal">
+        <h3>{{ aktiveHilfe.name }}</h3>
+        <p>{{ aktiveHilfe.beschreibung }}</p>
+        <button @click="aktiveHilfe = null" class="schliessen-button">
+          Schließen
+        </button>
       </div>
     </div>
   </div>
@@ -35,6 +42,7 @@ export default {
   data() {
     return {
       links: [],
+      aktiveHilfe: null,
     };
   },
   mounted() {
@@ -42,6 +50,11 @@ export default {
     if (gespeicherteLinks) {
       this.links = JSON.parse(gespeicherteLinks);
     }
+  },
+  methods: {
+    zeigeHilfe(link) {
+      this.aktiveHilfe = link;
+    },
   },
 };
 </script>
@@ -51,27 +64,17 @@ export default {
   background-color: white;
   padding: 20px;
   border-radius: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0px 0px 2px #ccc;
-}
-
-.einleitungstext {
-  font-size: 18px;
-  color: #4f4f4f;
-  margin-bottom: 70px;
-  margin-left: 10px;
-  margin-right: 10px;
-  line-height: 1.6;
+  box-shadow: 0 0 2px #ccc;
 }
 
 .section-title {
   background-color: #9353a4;
   color: white;
-  padding: 10px;
-  display: inline-block;
+  padding: 10px 20px;
   border-radius: 20px;
   font-size: 22px;
-  margin: 0 0 20px 0;
+  margin-bottom: 30px;
+  display: inline-block;
 }
 
 .links-grid {
@@ -94,6 +97,7 @@ export default {
   text-decoration: none;
   color: inherit;
   transition: transform 0.2s;
+  position: relative;
 }
 
 .link-card:hover {
@@ -108,22 +112,68 @@ export default {
 
 .link-name {
   font-weight: bold;
+  font-size: 20px;
   margin-bottom: 10px;
-  font-size: 18px;
 }
 
-.link-details {
-  font-size: 14px;
+.link-text {
+  font-size: 16px;
   color: #555;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   text-align: center;
 }
 
 .hilfe-button {
-  background-color: #e1b47a;
+  background-color: #d79b52;
   border: none;
-  padding: 10px 15px;
+  padding: 10px 20px;
   border-radius: 8px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0px 0px 10px #999;
+  text-align: center;
+}
+
+.modal h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.modal p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.schliessen-button {
+  background-color: #9353a4;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
 }

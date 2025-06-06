@@ -1,13 +1,13 @@
 <template>
   <div class="background-wrapper">
-    <h2 class="section-title">Links</h2>
+    <div class="header-zeile">
+      <h2 class="section-title">Links</h2>
+      <button @click="toggleForm" class="toggle-button">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
 
-    <!-- Button zum Ein- und Ausklappen des Formulars -->
-    <button @click="toggleForm" class="toggle-button">
-      Neuen Link hinzufügen
-    </button>
-
-    <!-- Formular zum Hinzufügen eines neuen Links -->
+    <!-- Formular -->
     <div v-if="formVisible">
       <form @submit.prevent="addLink" class="link-formular">
         <input v-model="newLink.name" type="text" placeholder="Name" required />
@@ -90,7 +90,6 @@ export default {
       this.links.push({ ...this.newLink });
       localStorage.setItem("links", JSON.stringify(this.links));
 
-      // Formular leeren
       this.newLink.name = "";
       this.newLink.beschreibung = "";
       this.newLink.url = "";
@@ -108,34 +107,45 @@ export default {
 </script>
 
 <style scoped>
-/* Hier bleibt alles exakt wie du es hattest */
 .background-wrapper {
   background-color: white;
   padding: 20px;
   border-radius: 20px;
   margin-bottom: 20px;
-  box-shadow: 0px 0px 10px #ccc;
+  box-shadow: 0px 0px 2px #ccc;
+}
+
+.header-zeile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .section-title {
-  background-color: #6d3a8c;
+  background-color: #9353a4;
   color: white;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 20px;
   font-size: 22px;
-  margin: 0 0 20px 0;
-  border-top: 5px solid #6d3a8c;
+  margin: 0;
+  display: inline-block;
 }
 
 .toggle-button {
-  background-color: #eab377;
-  color: white;
-  padding: 10px;
+  background-color: #fafafa;
+  color: #9353a4;
+  font-size: 22px;
+  padding: 5px 12px;
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
-  margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .link-formular {

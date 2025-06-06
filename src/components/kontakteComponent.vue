@@ -19,7 +19,10 @@
           <strong>{{ kontakt.name }}</strong>
           <p>{{ kontakt.telefon }}</p>
         </div>
-        <button class="anrufen-button">Anrufen</button>
+        <!-- Button mit tel-Link im Alert -->
+        <button class="anrufen-button" @click="anrufen(kontakt.telefon)">
+          Anrufen
+        </button>
       </div>
     </div>
   </div>
@@ -44,6 +47,15 @@ export default {
         { name: "Klaus", telefon: "0667 / 8142123", foto: "pfad/zu/klaus.png" },
       ];
     }
+  },
+  methods: {
+    anrufen(telefon) {
+      const nummer = telefon.replace(/[^0-9+]/g, ""); // nur gültige Zeichen
+      const confirmed = confirm(`Möchtest du ${telefon} anrufen?`);
+      if (confirmed) {
+        window.location.href = `tel:${nummer}`;
+      }
+    },
   },
 };
 </script>

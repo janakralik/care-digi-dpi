@@ -112,13 +112,13 @@ export default {
 }
 
 .section-title {
-  background-color: #6d3a8c;
+  background-color: #9353a4;
   color: white;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 20px;
   font-size: 22px;
-  margin: 0 0 20px 0;
-  border-top: 5px solid #6d3a8c;
+  margin-bottom: 20px;
+  display: inline-block;
 }
 
 .subsection-title {

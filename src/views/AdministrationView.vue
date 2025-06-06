@@ -2,15 +2,15 @@
   <div class="admin-wrapper">
     <!-- Einleitungstext -->
     <div class="einleitung">
-      <h2>Willkommen im Administrationsbereich!</h2>
+      <h2>Willkommen im Administrationsbereich</h2>
       <p>
-        Willkommen im Administrationsbereich Hier kannst du alles verwalten, was
-        die App betrifft. Du hast die Möglichkeit, Inhalte zu bearbeiten, neue
-        Erinnerungen hinzuzufügen oder bestehende Einträge zu aktualisieren und
-        zu löschen. Dieser Bereich ist speziell dafür da, um dir die
-        Organisation zu erleichtern und sicherzustellen, dass alle Informationen
-        für die Nutzer:innen aktuell und hilfreich sind. Nimm dir Zeit, schau
-        dich um und gestalte die App so, wie sie am besten passt!
+        Hier kannst du alles verwalten, was die App betrifft. Du hast die
+        Möglichkeit, Inhalte zu bearbeiten, neue Erinnerungen hinzuzufügen oder
+        bestehende Einträge zu aktualisieren und zu löschen. Dieser Bereich ist
+        speziell dafür da, um dir die Organisation zu erleichtern und
+        sicherzustellen, dass alle Informationen für die Nutzer:innen aktuell
+        und hilfreich sind. Nimm dir Zeit, schau dich um und gestalte die App
+        so, wie sie am besten passt!
       </p>
       <ul class="einleitungsliste">
         <li>
@@ -29,6 +29,7 @@
     </div>
 
     <!-- Komponenten -->
+
     <div id="erinnerungen" class="admin-section">
       <ErinnerungErstellen />
     </div>
@@ -40,19 +41,31 @@
     <div id="kontakte" class="admin-section">
       <KontakteErstellen />
     </div>
+
+    <div id="nachrichtenVerwalten" class="admin-section">
+      <NachrichtVerwalten />
+    </div>
+
+    <div id="heroBildAuswählen" class="admin-section">
+      <HeroBildVerwalten />
+    </div>
   </div>
 </template>
 
 <script>
+import HeroBildVerwalten from "@/components/HeroBildVerwalten.vue";
 import KontakteErstellen from "@/components/kontakteErstellen.vue";
 import LinkErstellen from "@/components/linksErstellen.vue";
 import ErinnerungErstellen from "@/components/erinnerungenErstellen.vue";
+import NachrichtVerwalten from "@/components/nachrichtVerwalten.vue";
 
 export default {
   components: {
+    HeroBildVerwalten,
     KontakteErstellen,
     LinkErstellen,
     ErinnerungErstellen,
+    NachrichtVerwalten,
   },
 };
 </script>
@@ -71,11 +84,12 @@ p {
 }
 
 .einleitung {
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin: 50px auto 60px auto;
   padding: 20px;
-  align: center;
-  background-color: #fefaf7;
+  background-color: #ffffff;
+  border-radius: 25px;
+  box-shadow: 0px 0px 10px #ccc;
+  max-width: 1000px;
 }
 
 .einleitung h2 {

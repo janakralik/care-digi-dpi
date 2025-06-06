@@ -1,13 +1,13 @@
 <template>
   <div class="background-wrapper">
-    <h2 class="section-title">Ansprechpartner</h2>
+    <div class="header-zeile">
+      <h2 class="section-title">Ansprechpartner</h2>
+      <button @click="toggleForm" class="toggle-button">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
 
-    <!-- Button zum Ein- und Ausklappen des Formulars -->
-    <button @click="toggleForm" class="toggle-button">
-      Neuen Ansprechpartner hinzufügen
-    </button>
-
-    <!-- Formular zum Hinzufügen eines neuen Ansprechpartners, standardmäßig ausgeblendet -->
+    <!-- Formular -->
     <div v-if="formVisible">
       <form @submit.prevent="addKontakt" class="kontakt-formular">
         <input
@@ -65,7 +65,7 @@ export default {
         telefon: "",
         foto: "",
       },
-      formVisible: false, // Steuert die Sichtbarkeit des Formulars
+      formVisible: false,
     };
   },
   mounted() {
@@ -80,7 +80,7 @@ export default {
       if (file) {
         const reader = new FileReader();
         reader.onload = (e) => {
-          this.newKontakt.foto = e.target.result; // Base64-String
+          this.newKontakt.foto = e.target.result;
         };
         reader.readAsDataURL(file);
       }
@@ -94,7 +94,6 @@ export default {
       this.kontakte.push({ ...this.newKontakt });
       localStorage.setItem("kontakte", JSON.stringify(this.kontakte));
 
-      // Formular leeren
       this.newKontakt.name = "";
       this.newKontakt.telefon = "";
       this.newKontakt.foto = "";
@@ -105,7 +104,7 @@ export default {
       localStorage.setItem("kontakte", JSON.stringify(this.kontakte));
     },
     toggleForm() {
-      this.formVisible = !this.formVisible; // Wechselt den Zustand der Formularsichtbarkeit
+      this.formVisible = !this.formVisible;
     },
   },
 };
@@ -117,28 +116,40 @@ export default {
   padding: 20px;
   border-radius: 20px;
   margin-bottom: 20px;
-  box-shadow: 0px 0px 10px #ccc;
+  box-shadow: 0px 0px 2px #ccc;
+}
+
+.header-zeile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .section-title {
-  background-color: #6d3a8c;
+  background-color: #9353a4;
   color: white;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 20px;
   font-size: 22px;
-  margin: 0 0 20px 0;
-  border-top: 5px solid #6d3a8c;
+  margin: 0;
+  display: inline-block;
 }
 
 .toggle-button {
-  background-color: #eab377;
-  color: white;
-  padding: 10px;
+  background-color: #fafafa;
+  color: #9353a4;
+  font-size: 22px;
+  padding: 5px 12px;
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
-  margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .kontakt-formular {
@@ -169,7 +180,7 @@ export default {
 }
 
 .kontakt-card {
-  background: #fff;
+  background: #fef3e3;
   display: flex;
   align-items: center;
   padding: 15px;
@@ -177,7 +188,6 @@ export default {
   border: 1px solid #efd1b0;
   border-radius: 10px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-  position: relative;
 }
 
 .kontakt-foto {
